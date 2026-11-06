@@ -1,0 +1,37 @@
+{
+  "arquivo": "awb_09.pdf",
+  "tipo": "AWB",
+  "layout": "pt_chave_valor",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "CONHECIMENTO AÉREO (AIR WAYBILL)\nNúmero do AWB: 020-18335354\nEmbarcador: Shanghai Polymer Trading Co., Ltd.\nConsignatário: Quimica Litoral Norte Ltda\nAeroporto de origem: FRA\nAeroporto de destino: GRU\nVolumes: 36\nPeso bruto: 1.839,56 kg\nPeso taxável: 2.299,45 kg\nMercadoria: Válvulas de aço",
+  "campos": {
+    "numero_awb": "020-18335354",
+    "embarcador": "Shanghai Polymer Trading Co., Ltd.",
+    "consignatario": "Quimica Litoral Norte Ltda",
+    "aeroporto_origem": "FRA",
+    "aeroporto_destino": "GRU",
+    "voo": null,
+    "data_voo": null,
+    "volumes": 36,
+    "peso_bruto_kg": "1839.56",
+    "peso_taxavel_kg": "2299.45",
+    "descricao_mercadoria": "Válvulas de aço"
+  },
+  "evidencias": {
+    "numero_awb": "Número do AWB: 020-18335354",
+    "embarcador": "Embarcador: Shanghai Polymer Trading Co., Ltd.",
+    "consignatario": "Consignatário: Quimica Litoral Norte Ltda",
+    "aeroporto_origem": "Aeroporto de origem: FRA",
+    "aeroporto_destino": "Aeroporto de destino: GRU",
+    "voo": null,
+    "data_voo": null,
+    "volumes": "Volumes: 36",
+    "peso_bruto_kg": "Peso bruto: 1.839,56 kg",
+    "peso_taxavel_kg": "Peso taxável: 2.299,45 kg",
+    "descricao_mercadoria": "Mercadoria: Válvulas de aço"
+  }
+}

@@ -1,0 +1,321 @@
+version: 2
+
+# Staging (schema prata, views): 1 modelo por tabela do bronze. Só renomeia, tipa e
+# padroniza códigos (maiúsculas, sem espaços). Nenhuma regra de negócio aqui.
+
+models:
+  - name: stg_vendedores
+    description: Vendedores. Grão - 1 linha por vendedor.
+    columns:
+      - name: vendedor_id
+        data_tests: [unique, not_null]
+      - name: vendedor_nome
+        data_tests: [not_null]
+      - name: data_admissao
+
+  - name: stg_clientes
+    description: Clientes (fictícios). Grão - 1 linha por cliente.
+    columns:
+      - name: cliente_id
+        data_tests: [unique, not_null]
+      - name: cnpj
+        description: 14 caracteres, sem pontuação. Nunca vai para logs.
+        data_tests: [unique, not_null]
+      - name: razao_social
+        data_tests: [not_null]
+      - name: segmento
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('segmentos')
+                field: codigo
+      - name: porte
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [PEQUENO, MEDIO, GRANDE]
+      - name: uf
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [SC, PR, RS, SP]
+      - name: vendedor_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_vendedores')
+                field: vendedor_id
+      - name: data_cadastro
+
+  - name: stg_cotacoes
+    description: Cotações de frete. Grão - 1 linha por cotação.
+    columns:
+      - name: cotacao_id
+        data_tests: [unique, not_null]
+      - name: cliente_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_clientes')
+                field: cliente_id
+      - name: vendedor_id
+        data_tests: [not_null]
+      - name: modal
+        data_tests: &modais
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [FCL, LCL, AEREO, RODOVIARIO, ISOTANQUE, PROJETO]
+      - name: direcao
+        data_tests: &direcoes
+          - accepted_values:
+              arguments:
+                values: [IMPORTACAO, EXPORTACAO]
+      - name: rota_codigo
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('rotas')
+                field: codigo
+      - name: origem
+      - name: destino
+      - name: solicitada_em
+        data_tests: [not_null]
+      - name: respondida_em
+        data_tests: [not_null]
+      - name: valor_frete
+        description: Valor cotado do frete, na moeda da cotação.
+        data_tests: [not_null]
+      - name: moeda
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('moedas')
+                field: codigo
+      - name: quantidade_equipamentos
+      - name: peso_kg
+      - name: volume_m3
+      - name: status
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [GANHA, PERDIDA, EXPIRADA, EM_ABERTO]
+      - name: motivo_perda
+
+  - name: stg_embarques
+    description: Processos de embarque. Grão - 1 linha por processo.
+    columns:
+      - name: processo
+        data_tests: [unique, not_null]
+      - name: cotacao_id
+        data_tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_cotacoes')
+                field: cotacao_id
+      - name: cliente_id
+        data_tests: [not_null]
+      - name: modal
+        data_tests: *modais
+      - name: direcao
+        data_tests: *direcoes
+      - name: rota_codigo
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('rotas')
+                field: codigo
+      - name: origem
+      - name: destino
+      - name: armador_codigo
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('armadores')
+                field: codigo
+      - name: cia_aerea_prefixo
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('cias_aereas')
+                field: prefixo_awb
+      - name: awb
+      - name: bl_numero
+      - name: booking_em
+        data_tests: [not_null]
+      - name: etd
+        data_tests: [not_null]
+      - name: eta
+        data_tests: [not_null]
+      - name: atd
+      - name: ata
+      - name: status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  [BOOKING, AGUARDANDO_EMBARQUE, EM_TRANSITO, CHEGADA, LIBERADO, ENTREGUE, CANCELADO]
+      - name: quantidade_equipamentos
+      - name: teus
+      - name: peso_kg
+      - name: volume_m3
+      - name: peso_taxavel_kg
+
+  - name: stg_equipamentos
+    description: Contêineres e isotanques. Grão - 1 linha por equipamento de um processo.
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [processo, container_numero]
+    columns:
+      - name: processo
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_embarques')
+                field: processo
+      - name: container_numero
+        description: Número ISO 6346, validado na geração.
+        data_tests: [not_null]
+      - name: tipo
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [20DV, 40HC, ISO20]
+      - name: peso_kg
+      - name: free_time_dias
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [7, 10, 14]
+                quote: false
+
+  - name: stg_itens_financeiros
+    description: Receitas e custos. Grão - 1 linha por item financeiro, na moeda original.
+    columns:
+      - name: item_id
+        data_tests: [unique, not_null]
+      - name: processo
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_embarques')
+                field: processo
+      - name: tipo
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [RECEITA, CUSTO]
+      - name: categoria
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [FRETE, THC, ARMAZENAGEM, SEGURO, DEMURRAGE]
+      - name: valor
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "> 0"
+      - name: moeda
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('moedas')
+                field: codigo
+      - name: competencia
+        description: Data de competência; define a PTAX usada na conversão para BRL.
+        data_tests: [not_null]
+
+  - name: stg_tracking
+    description: Eventos de rastreamento. Grão - 1 linha por evento.
+    columns:
+      - name: evento_id
+        data_tests: [unique, not_null]
+      - name: processo
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_embarques')
+                field: processo
+      - name: tipo
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  [BOOKING_CONFIRMADO, GATE_IN, EMBARQUE, TRANSBORDO, ETA_ATUALIZADO, CHEGADA, LIBERACAO,
+                   DEVOLUCAO_VAZIO]
+      - name: ocorrido_em
+        data_tests: [not_null]
+      - name: local
+      - name: eta_informada
+
+  - name: stg_ptax
+    description: PTAX de fechamento. Grão - 1 linha por moeda e dia útil.
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [moeda, data_cotacao]
+    columns:
+      - name: moeda
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [USD, EUR]
+      - name: data_cotacao
+        data_tests: [not_null]
+      - name: cotacao_compra
+      - name: cotacao_venda
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "> 0"
+      - name: paridade_compra
+      - name: paridade_venda
+      - name: data_hora_cotacao
+
+  - name: stg_comexstat
+    description: >
+      Comércio exterior de SC. Grão - 1 linha por fluxo, mês, país, posição SH4 e via.
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [fluxo, mes_referencia, pais, sh4_codigo, via]
+    columns:
+      - name: fluxo
+        data_tests: *direcoes
+      - name: mes_referencia
+        description: Primeiro dia do mês dos dados.
+        data_tests: [not_null]
+      - name: ano
+      - name: mes
+      - name: pais
+        data_tests: [not_null]
+      - name: sh2_codigo
+        description: Capítulo do Sistema Harmonizado (2 primeiros dígitos da posição).
+        data_tests: [not_null]
+      - name: sh4_codigo
+        data_tests: [not_null]
+      - name: sh4_descricao
+      - name: via
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [MARITIMA, AEREA]
+      - name: valor_fob_usd
+        data_tests: [not_null]
+      - name: peso_kg
+      - name: frete_usd
+      - name: seguro_usd

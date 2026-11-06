@@ -1,0 +1,57 @@
+version: 2
+
+# Quem consome a camada ouro. Aparecem no dbt docs e permitem `dbt build --select +exposure:...`.
+
+exposures:
+  - name: relatorio_power_bi
+    label: Relatório Power BI do FlowStream-Comex
+    type: dashboard
+    maturity: low
+    description: >
+      Relatório com as páginas Visão executiva, Operações e SLA, Comercial, Financeiro,
+      Qualidade da IA e Saúde dos dados. A camada de consumo (schema bi) chega no P15.
+    owner:
+      name: Renan Rodrigues
+    depends_on:
+      - ref('dim_data')
+      - ref('dim_cliente')
+      - ref('dim_vendedor')
+      - ref('dim_rota')
+      - ref('dim_porto')
+      - ref('dim_modal')
+      - ref('dim_parceiro')
+      - ref('fct_embarque')
+      - ref('fct_financeiro')
+      - ref('fct_cotacao')
+      - ref('fct_tracking_evento')
+      - ref('kpi_on_time_armador_mes')
+      - ref('kpi_margem_processo')
+      - ref('kpi_win_rate_vendedor_mes')
+      - ref('kpi_tempo_resposta_cotacao')
+      - ref('kpi_mercado_sc')
+      - ref('kpi_saude_dados')
+
+  - name: alertas_n8n
+    label: Alertas operacionais (n8n)
+    type: application
+    maturity: low
+    description: >
+      Fluxos do n8n que avisam a operação: risco de demurrage, ETA alterado e resumo diário
+      (P13). Leem os KPIs pela API (GET /v1/alertas/{nome}).
+    owner:
+      name: Renan Rodrigues
+    depends_on:
+      - ref('kpi_demurrage_risco')
+      - ref('fct_tracking_evento')
+      - ref('fct_embarque')
+      - ref('kpi_saude_dados')
+
+  - name: api_embarques
+    label: API FastAPI - embarques em risco
+    type: application
+    maturity: low
+    description: GET /v1/embarques/risco?dias=3 (P08) lê o risco de demurrage por contêiner.
+    owner:
+      name: Renan Rodrigues
+    depends_on:
+      - ref('kpi_demurrage_risco')

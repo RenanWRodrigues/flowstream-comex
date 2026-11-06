@@ -1,0 +1,81 @@
+{
+  "arquivo": "bl_10.pdf",
+  "tipo": "BL",
+  "layout": "pt_chave_valor",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "CONHECIMENTO DE EMBARQUE (BILL OF LADING)\nNúmero do B/L: FSLX9672005851\nEmbarcador: Ningbo Machinery Export Co., Ltd.\nConsignatário: Quimica Litoral Norte Ltda\nPorto de embarque: CNNGB - Ningbo\nPorto de descarga: BRITJ - Itajai\nNavio: CAPE ITAPOA    Viagem: 359N\nData de embarque: 15/03/2026\nContêiner FSCU2667352  Lacre SL788791  40GP  112 volumes  13.665,07 kg\nContêiner AZLU6815047  Lacre SL823966  20GP  142 volumes  4.296,61 kg\nTotal de volumes: 254\nPeso bruto total: 17.961,68 kg\nCubagem: 51,12 m³\nMercadoria: Rolamentos de esferas\nNCM: 8482.10.10\nFrete: PREPAID",
+  "campos": {
+    "numero_bl": "FSLX9672005851",
+    "embarcador": "Ningbo Machinery Export Co., Ltd.",
+    "consignatario": "Quimica Litoral Norte Ltda",
+    "notificar": null,
+    "porto_carregamento": "CNNGB",
+    "porto_descarga": "BRITJ",
+    "navio": "CAPE ITAPOA",
+    "viagem": "359N",
+    "data_embarque": "2026-03-15",
+    "conteineres": [
+      {
+        "numero": "FSCU2667352",
+        "lacre": "SL788791",
+        "tipo": "40GP",
+        "volumes": 112,
+        "peso_bruto_kg": "13665.07"
+      },
+      {
+        "numero": "AZLU6815047",
+        "lacre": "SL823966",
+        "tipo": "20GP",
+        "volumes": 142,
+        "peso_bruto_kg": "4296.61"
+      }
+    ],
+    "volumes_total": 254,
+    "peso_bruto_total_kg": "17961.68",
+    "cubagem_m3": "51.12",
+    "descricao_mercadoria": "Rolamentos de esferas",
+    "ncm": [
+      "84821010"
+    ],
+    "frete": "PREPAID"
+  },
+  "evidencias": {
+    "numero_bl": "Número do B/L: FSLX9672005851",
+    "embarcador": "Embarcador: Ningbo Machinery Export Co., Ltd.",
+    "consignatario": "Consignatário: Quimica Litoral Norte Ltda",
+    "notificar": null,
+    "porto_carregamento": "Porto de embarque: CNNGB - Ningbo",
+    "porto_descarga": "Porto de descarga: BRITJ - Itajai",
+    "navio": "Navio: CAPE ITAPOA    Viagem: 359N",
+    "viagem": "Navio: CAPE ITAPOA    Viagem: 359N",
+    "data_embarque": "Data de embarque: 15/03/2026",
+    "conteineres": [
+      {
+        "numero": "Contêiner FSCU2667352  Lacre SL788791  40GP  112 volumes  13.665,07 kg",
+        "lacre": "Contêiner FSCU2667352  Lacre SL788791  40GP  112 volumes  13.665,07 kg",
+        "tipo": "Contêiner FSCU2667352  Lacre SL788791  40GP  112 volumes  13.665,07 kg",
+        "volumes": "Contêiner FSCU2667352  Lacre SL788791  40GP  112 volumes  13.665,07 kg",
+        "peso_bruto_kg": "Contêiner FSCU2667352  Lacre SL788791  40GP  112 volumes  13.665,07 kg"
+      },
+      {
+        "numero": "Contêiner AZLU6815047  Lacre SL823966  20GP  142 volumes  4.296,61 kg",
+        "lacre": "Contêiner AZLU6815047  Lacre SL823966  20GP  142 volumes  4.296,61 kg",
+        "tipo": "Contêiner AZLU6815047  Lacre SL823966  20GP  142 volumes  4.296,61 kg",
+        "volumes": "Contêiner AZLU6815047  Lacre SL823966  20GP  142 volumes  4.296,61 kg",
+        "peso_bruto_kg": "Contêiner AZLU6815047  Lacre SL823966  20GP  142 volumes  4.296,61 kg"
+      }
+    ],
+    "volumes_total": "Total de volumes: 254",
+    "peso_bruto_total_kg": "Peso bruto total: 17.961,68 kg",
+    "cubagem_m3": "Cubagem: 51,12 m³",
+    "descricao_mercadoria": "Mercadoria: Rolamentos de esferas",
+    "ncm": [
+      "NCM: 8482.10.10"
+    ],
+    "frete": "Frete: PREPAID"
+  }
+}

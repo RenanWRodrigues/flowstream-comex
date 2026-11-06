@@ -1,0 +1,73 @@
+{
+  "arquivo": "invoice_09.pdf",
+  "tipo": "INVOICE",
+  "layout": "en_tabela",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "COMMERCIAL INVOICE\nInvoice Number INV-2026-5746\nInvoice Date 2026-01-15\nSeller Milano Tessuti S.r.l.\nBuyer Importadora Exemplo Ltda\nBuyer CNPJ 00.000.123/0001-22\nIncoterms 2020 CIF Paranagua\nCurrency USD\nDescription NCM Qty Unit Unit Price Amount\nLaptop computers 84713012 2210 UN 242.61 536168.10\nSteel valves 84818095 1994 KG 82.46 164425.24\nTOTAL AMOUNT USD 700,593.34\nCountry of Origin Italy",
+  "campos": {
+    "numero_invoice": "INV-2026-5746",
+    "data_emissao": "2026-01-15",
+    "exportador": "Milano Tessuti S.r.l.",
+    "importador": "Importadora Exemplo Ltda",
+    "importador_cnpj": "00.000.123/0001-22",
+    "incoterm": "CIF",
+    "moeda": "USD",
+    "itens": [
+      {
+        "descricao": "Laptop computers",
+        "ncm": "84713012",
+        "quantidade": "2210",
+        "unidade": "UN",
+        "valor_unitario": "242.61",
+        "valor_total": "536168.10"
+      },
+      {
+        "descricao": "Steel valves",
+        "ncm": "84818095",
+        "quantidade": "1994",
+        "unidade": "KG",
+        "valor_unitario": "82.46",
+        "valor_total": "164425.24"
+      }
+    ],
+    "valor_total": "700593.34",
+    "pais_origem": "Italy",
+    "frete": null,
+    "seguro": null
+  },
+  "evidencias": {
+    "numero_invoice": "Invoice Number INV-2026-5746",
+    "data_emissao": "Invoice Date 2026-01-15",
+    "exportador": "Seller Milano Tessuti S.r.l.",
+    "importador": "Buyer Importadora Exemplo Ltda",
+    "importador_cnpj": "Buyer CNPJ 00.000.123/0001-22",
+    "incoterm": "Incoterms 2020 CIF Paranagua",
+    "moeda": "Currency USD",
+    "itens": [
+      {
+        "descricao": "Laptop computers 84713012 2210 UN 242.61 536168.10",
+        "ncm": "Laptop computers 84713012 2210 UN 242.61 536168.10",
+        "quantidade": "Laptop computers 84713012 2210 UN 242.61 536168.10",
+        "unidade": "Laptop computers 84713012 2210 UN 242.61 536168.10",
+        "valor_unitario": "Laptop computers 84713012 2210 UN 242.61 536168.10",
+        "valor_total": "Laptop computers 84713012 2210 UN 242.61 536168.10"
+      },
+      {
+        "descricao": "Steel valves 84818095 1994 KG 82.46 164425.24",
+        "ncm": "Steel valves 84818095 1994 KG 82.46 164425.24",
+        "quantidade": "Steel valves 84818095 1994 KG 82.46 164425.24",
+        "unidade": "Steel valves 84818095 1994 KG 82.46 164425.24",
+        "valor_unitario": "Steel valves 84818095 1994 KG 82.46 164425.24",
+        "valor_total": "Steel valves 84818095 1994 KG 82.46 164425.24"
+      }
+    ],
+    "valor_total": "TOTAL AMOUNT USD 700,593.34",
+    "pais_origem": "Country of Origin Italy",
+    "frete": null,
+    "seguro": null
+  }
+}

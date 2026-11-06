@@ -1,0 +1,89 @@
+{
+  "arquivo": "invoice_02.pdf",
+  "tipo": "INVOICE",
+  "layout": "en_tabela",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "COMMERCIAL INVOICE\nInvoice Number CI-2026-6736\nInvoice Date 2026-01-16\nSeller Ningbo Machinery Export Co., Ltd.\nBuyer Textil Serra Azul Ltda\nBuyer CNPJ 00.000.246/0001-63\nIncoterms 2020 CFR Santos\nCurrency USD\nDescription NCM Qty Unit Unit Price Amount\nLaptop computers 84713012 1239 PCS 198.19 245557.41\nPolyethylene resin 39011010 961 KG 17.22 16548.42\nCeramic tiles 69072100 692 UN 115.60 79995.20\nTOTAL AMOUNT USD 342,101.03\nCountry of Origin China",
+  "campos": {
+    "numero_invoice": "CI-2026-6736",
+    "data_emissao": "2026-01-16",
+    "exportador": "Ningbo Machinery Export Co., Ltd.",
+    "importador": "Textil Serra Azul Ltda",
+    "importador_cnpj": "00.000.246/0001-63",
+    "incoterm": "CFR",
+    "moeda": "USD",
+    "itens": [
+      {
+        "descricao": "Laptop computers",
+        "ncm": "84713012",
+        "quantidade": "1239",
+        "unidade": "PCS",
+        "valor_unitario": "198.19",
+        "valor_total": "245557.41"
+      },
+      {
+        "descricao": "Polyethylene resin",
+        "ncm": "39011010",
+        "quantidade": "961",
+        "unidade": "KG",
+        "valor_unitario": "17.22",
+        "valor_total": "16548.42"
+      },
+      {
+        "descricao": "Ceramic tiles",
+        "ncm": "69072100",
+        "quantidade": "692",
+        "unidade": "UN",
+        "valor_unitario": "115.6",
+        "valor_total": "79995.20"
+      }
+    ],
+    "valor_total": "342101.03",
+    "pais_origem": "China",
+    "frete": null,
+    "seguro": null
+  },
+  "evidencias": {
+    "numero_invoice": "Invoice Number CI-2026-6736",
+    "data_emissao": "Invoice Date 2026-01-16",
+    "exportador": "Seller Ningbo Machinery Export Co., Ltd.",
+    "importador": "Buyer Textil Serra Azul Ltda",
+    "importador_cnpj": "Buyer CNPJ 00.000.246/0001-63",
+    "incoterm": "Incoterms 2020 CFR Santos",
+    "moeda": "Currency USD",
+    "itens": [
+      {
+        "descricao": "Laptop computers 84713012 1239 PCS 198.19 245557.41",
+        "ncm": "Laptop computers 84713012 1239 PCS 198.19 245557.41",
+        "quantidade": "Laptop computers 84713012 1239 PCS 198.19 245557.41",
+        "unidade": "Laptop computers 84713012 1239 PCS 198.19 245557.41",
+        "valor_unitario": "Laptop computers 84713012 1239 PCS 198.19 245557.41",
+        "valor_total": "Laptop computers 84713012 1239 PCS 198.19 245557.41"
+      },
+      {
+        "descricao": "Polyethylene resin 39011010 961 KG 17.22 16548.42",
+        "ncm": "Polyethylene resin 39011010 961 KG 17.22 16548.42",
+        "quantidade": "Polyethylene resin 39011010 961 KG 17.22 16548.42",
+        "unidade": "Polyethylene resin 39011010 961 KG 17.22 16548.42",
+        "valor_unitario": "Polyethylene resin 39011010 961 KG 17.22 16548.42",
+        "valor_total": "Polyethylene resin 39011010 961 KG 17.22 16548.42"
+      },
+      {
+        "descricao": "Ceramic tiles 69072100 692 UN 115.60 79995.20",
+        "ncm": "Ceramic tiles 69072100 692 UN 115.60 79995.20",
+        "quantidade": "Ceramic tiles 69072100 692 UN 115.60 79995.20",
+        "unidade": "Ceramic tiles 69072100 692 UN 115.60 79995.20",
+        "valor_unitario": "Ceramic tiles 69072100 692 UN 115.60 79995.20",
+        "valor_total": "Ceramic tiles 69072100 692 UN 115.60 79995.20"
+      }
+    ],
+    "valor_total": "TOTAL AMOUNT USD 342,101.03",
+    "pais_origem": "Country of Origin China",
+    "frete": null,
+    "seguro": null
+  }
+}

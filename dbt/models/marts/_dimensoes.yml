@@ -1,0 +1,206 @@
+version: 2
+
+# Dimensões (schema ouro, tabelas com contrato imposto).
+
+models:
+  - name: dim_data
+    description: Calendário de 2023 a 2027 com feriados nacionais e bancários. Grão - 1 linha por dia.
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: data
+        data_type: date
+        data_tests: [unique, not_null]
+      - name: ano
+        data_type: integer
+      - name: trimestre
+        data_type: integer
+      - name: mes
+        data_type: integer
+      - name: dia
+        data_type: integer
+      - name: ano_mes
+        data_type: text
+        description: AAAA-MM, para eixos e filtros.
+      - name: inicio_mes
+        data_type: date
+      - name: nome_mes
+        data_type: text
+      - name: dia_semana
+        data_type: integer
+        description: 1 = segunda ... 7 = domingo (ISO).
+      - name: nome_dia_semana
+        data_type: text
+      - name: eh_fim_de_semana
+        data_type: boolean
+      - name: eh_feriado
+        data_type: boolean
+      - name: nome_feriado
+        data_type: text
+      - name: tipo_feriado
+        data_type: text
+      - name: eh_dia_util
+        data_type: boolean
+        description: Segunda a sexta e não feriado (os mesmos dias em que há PTAX).
+
+  - name: dim_cliente
+    description: >
+      Clientes com histórico SCD tipo 2 (snapshot snap_clientes). Grão - 1 linha por versão
+      do cliente. A primeira versão vale desde sempre; as seguintes, desde a mudança.
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: cliente_sk
+        data_type: text
+        description: Chave da versão (dbt_scd_id). Os fatos apontam para a versão vigente na data.
+        data_tests: [unique, not_null]
+      - name: cliente_id
+        data_type: text
+        data_tests: [not_null]
+      - name: cnpj
+        data_type: text
+      - name: razao_social
+        data_type: text
+      - name: segmento
+        data_type: text
+      - name: segmento_nome
+        data_type: text
+      - name: porte
+        data_type: text
+      - name: uf
+        data_type: text
+      - name: vendedor_id
+        data_type: text
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_vendedor')
+                field: vendedor_id
+      - name: data_cadastro
+        data_type: date
+      - name: valido_de
+        data_type: timestamp with time zone
+        data_tests: [not_null]
+      - name: valido_ate
+        data_type: timestamp with time zone
+        description: Nulo na versão atual.
+      - name: versao_atual
+        data_type: boolean
+
+  - name: dim_vendedor
+    description: Vendedores. Grão - 1 linha por vendedor.
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: vendedor_id
+        data_type: text
+        data_tests: [unique, not_null]
+      - name: vendedor_nome
+        data_type: text
+      - name: data_admissao
+        data_type: date
+
+  - name: dim_rota
+    description: Rotas operadas, com transit time do seed. Grão - 1 linha por rota.
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: rota_codigo
+        data_type: text
+        data_tests: [unique, not_null]
+      - name: modal
+        data_type: text
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_modal')
+                field: modal
+      - name: trade_lane
+        data_type: text
+      - name: direcao
+        data_type: text
+      - name: origem
+        data_type: text
+        data_tests: &local_existe
+          - relationships:
+              arguments:
+                to: ref('dim_porto')
+                field: local_codigo
+      - name: origem_nome
+        data_type: text
+      - name: destino
+        data_type: text
+        data_tests: *local_existe
+      - name: destino_nome
+        data_type: text
+      - name: transit_time_medio_dias
+        data_type: numeric(5,1)
+      - name: transit_time_desvio_dias
+        data_type: numeric(5,1)
+
+  - name: dim_porto
+    description: >
+      Portos (UN/LOCODE) e aeroportos (IATA) das rotas. Grão - 1 linha por local.
+      O nome segue o guia, mas inclui aeroportos porque as rotas aéreas usam IATA.
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: local_codigo
+        data_type: text
+        data_tests: [unique, not_null]
+      - name: local_nome
+        data_type: text
+      - name: tipo_local
+        data_type: text
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [PORTO, AEROPORTO]
+      - name: cidade
+        data_type: text
+      - name: pais_iso2
+        data_type: text
+      - name: pais_nome
+        data_type: text
+      - name: regiao
+        data_type: text
+
+  - name: dim_modal
+    description: Modais de transporte. Grão - 1 linha por modal.
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: modal
+        data_type: text
+        data_tests: [unique, not_null]
+      - name: modal_nome
+        data_type: text
+      - name: categoria
+        data_type: text
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [MARITIMO, AEREO, RODOVIARIO]
+      - name: usa_conteiner
+        data_type: boolean
+        description: Verdadeiro quando o cliente usa contêiner ou tanque próprio (FCL, isotanque).
+      - name: ordem
+        data_type: integer
+
+  - name: dim_parceiro
+    description: Armadores e companhias aéreas (fictícios). Grão - 1 linha por parceiro.
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: parceiro_id
+        data_type: text
+        description: Código do armador ou prefixo AWB da companhia aérea.
+        data_tests: [unique, not_null]
+      - name: parceiro_nome
+        data_type: text
+      - name: tipo_parceiro
+        data_type: text
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [ARMADOR, CIA_AEREA]

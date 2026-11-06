@@ -1,0 +1,37 @@
+{
+  "arquivo": "awb_07.pdf",
+  "tipo": "AWB",
+  "layout": "en_chave_valor",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "AIR WAYBILL\nAWB No.: 057-54943346\nShipper: Rotterdam Chemicals B.V.\nConsignee: Importadora Exemplo Ltda\nAirport of Departure: CDG\nAirport of Destination: GRU\nFlight: AF 9642 / 13/06/2026\nNo. of pieces: 17\nGross weight: 2,028.93 kg\nChargeable weight: 2,536.16 kg\nNature of goods: Ceramic tiles",
+  "campos": {
+    "numero_awb": "057-54943346",
+    "embarcador": "Rotterdam Chemicals B.V.",
+    "consignatario": "Importadora Exemplo Ltda",
+    "aeroporto_origem": "CDG",
+    "aeroporto_destino": "GRU",
+    "voo": "AF 9642",
+    "data_voo": "2026-06-13",
+    "volumes": 17,
+    "peso_bruto_kg": "2028.93",
+    "peso_taxavel_kg": "2536.16",
+    "descricao_mercadoria": "Ceramic tiles"
+  },
+  "evidencias": {
+    "numero_awb": "AWB No.: 057-54943346",
+    "embarcador": "Shipper: Rotterdam Chemicals B.V.",
+    "consignatario": "Consignee: Importadora Exemplo Ltda",
+    "aeroporto_origem": "Airport of Departure: CDG",
+    "aeroporto_destino": "Airport of Destination: GRU",
+    "voo": "Flight: AF 9642 / 13/06/2026",
+    "data_voo": "Flight: AF 9642 / 13/06/2026",
+    "volumes": "No. of pieces: 17",
+    "peso_bruto_kg": "Gross weight: 2,028.93 kg",
+    "peso_taxavel_kg": "Chargeable weight: 2,536.16 kg",
+    "descricao_mercadoria": "Nature of goods: Ceramic tiles"
+  }
+}

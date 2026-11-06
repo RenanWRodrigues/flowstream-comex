@@ -1,0 +1,200 @@
+version: 2
+
+# Dados de referência do FlowStream-Comex, carregados com `make dbt-seed` no schema prata.
+# Portos, aeroportos, países e moedas são reais. Armadores e companhias aéreas são
+# FICTÍCIOS: os códigos podem coincidir por acaso com códigos registrados de verdade.
+# Os CSVs também são conferidos pelo pytest (tests/unit/test_seeds.py) com as regras do
+# domínio: UN/LOCODE, IATA e prefixos de contêiner válidos.
+
+seeds:
+  - name: portos
+    description: Portos marítimos e fluviais usados nas rotas, identificados por UN/LOCODE.
+    config:
+      column_types:
+        unlocode: varchar(5)
+        pais_iso2: varchar(2)
+    columns:
+      - name: unlocode
+        description: "Código UN/LOCODE de 5 caracteres (2 do país + 3 do local). Ex.: BRITJ."
+        data_tests: [unique, not_null]
+      - name: nome
+        description: Nome do porto em português.
+        data_tests: [not_null]
+      - name: pais_iso2
+        description: País do porto (ISO 3166-1 alfa-2); igual aos 2 primeiros caracteres do UN/LOCODE.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('paises')
+                field: iso2
+      - name: regiao
+        description: Região usada para agrupar trade lanes.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [AMERICA_DO_SUL, AMERICA_DO_NORTE, ASIA, EUROPA, ORIENTE_MEDIO]
+
+  - name: aeroportos
+    description: Aeroportos com movimento de carga internacional, identificados por código IATA.
+    config:
+      column_types:
+        iata: varchar(3)
+        pais_iso2: varchar(2)
+    columns:
+      - name: iata
+        description: "Código IATA de 3 letras. Ex.: GRU, VCP, NVT."
+        data_tests: [unique, not_null]
+      - name: nome
+        description: Nome do aeroporto.
+        data_tests: [not_null]
+      - name: cidade
+        description: Cidade atendida pelo aeroporto.
+      - name: pais_iso2
+        description: País do aeroporto (ISO 3166-1 alfa-2).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('paises')
+                field: iso2
+
+  - name: paises
+    description: Países de origem e destino das cargas.
+    config:
+      column_types:
+        iso2: varchar(2)
+    columns:
+      - name: iso2
+        description: Código ISO 3166-1 alfa-2.
+        data_tests: [unique, not_null]
+      - name: nome
+        description: Nome do país em português.
+        data_tests: [not_null]
+      - name: regiao
+        description: Região geográfica, a mesma usada em portos.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [AMERICA_DO_SUL, AMERICA_DO_NORTE, ASIA, EUROPA, ORIENTE_MEDIO]
+
+  - name: moedas
+    description: Moedas aceitas pelo domínio (flowstream.domain.money.Currency).
+    config:
+      column_types:
+        codigo: varchar(3)
+    columns:
+      - name: codigo
+        description: Código ISO 4217.
+        data_tests:
+          - unique
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [BRL, USD, EUR, CNY]
+      - name: nome
+        description: Nome da moeda.
+      - name: simbolo
+        description: Símbolo usado em relatórios.
+
+  - name: segmentos
+    description: Segmentos de mercado dos clientes, com foco na indústria catarinense.
+    columns:
+      - name: codigo
+        description: Código do segmento.
+        data_tests: [unique, not_null]
+      - name: nome
+        description: Nome do segmento.
+        data_tests: [not_null]
+      - name: descricao
+        description: Exemplos de carga do segmento.
+
+  - name: armadores
+    description: Armadores (companhias de navegação) FICTÍCIOS.
+    config:
+      column_types:
+        prefixo_bic: varchar(3)
+    columns:
+      - name: codigo
+        description: Código interno do armador.
+        data_tests: [unique, not_null]
+      - name: nome
+        description: Nome fictício.
+        data_tests: [not_null]
+      - name: prefixo_bic
+        description: >
+          Código do proprietário dos contêineres (3 letras; com a categoria U forma o prefixo
+          ISO 6346, ex.: ATLU). Usado pelo gerador sintético.
+        data_tests: [unique, not_null]
+
+  - name: cias_aereas
+    description: Companhias aéreas de carga FICTÍCIAS.
+    config:
+      column_types:
+        prefixo_awb: varchar(3)
+    columns:
+      - name: prefixo_awb
+        description: Prefixo de 3 dígitos que inicia o número do AWB da companhia.
+        data_tests: [unique, not_null]
+      - name: nome
+        description: Nome fictício.
+        data_tests: [not_null]
+
+  - name: rotas
+    description: >
+      Rotas operadas, com transit time médio e desvio padrão em dias, por modal e trade lane.
+      Origem e destino são UN/LOCODE (marítimo e rodoviário) ou IATA (aéreo).
+    config:
+      column_types:
+        transit_time_medio_dias: numeric(5,1)
+        transit_time_desvio_dias: numeric(5,1)
+    columns:
+      - name: codigo
+        description: Código da rota (MODAL-ORIGEM-DESTINO).
+        data_tests: [unique, not_null]
+      - name: modal
+        description: Modal de transporte (flowstream.domain.shipment.Modal).
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [FCL, LCL, AEREO, RODOVIARIO, ISOTANQUE, PROJETO]
+      - name: trade_lane
+        description: >
+          Trade lane no padrão do mercado, ex.: ASIA-ECSA (Ásia para a costa leste da
+          América do Sul), ECSA-NEUR (costa leste da América do Sul para o norte da Europa).
+        data_tests: [not_null]
+      - name: origem
+        description: Porto/cidade (UN/LOCODE) ou aeroporto (IATA) de origem.
+        data_tests: [not_null]
+      - name: destino
+        description: Porto/cidade (UN/LOCODE) ou aeroporto (IATA) de destino.
+        data_tests: [not_null]
+      - name: transit_time_medio_dias
+        description: Transit time médio, em dias.
+        data_tests: [not_null]
+      - name: transit_time_desvio_dias
+        description: Desvio padrão do transit time, em dias; usado pelo gerador de atrasos.
+        data_tests: [not_null]
+
+  - name: feriados
+    description: >
+      Feriados nacionais (lei) e bancários (Carnaval e Corpus Christi, sem PTAX) de 2023 a
+      2027. Datas móveis calculadas a partir da Páscoa. O teste
+      assert_feriados_cobrem_dias_sem_ptax confere a lista contra os dias úteis em que o
+      Banco Central não publicou PTAX. Consciência Negra é nacional desde 2024.
+    config:
+      column_types:
+        data: date
+    columns:
+      - name: data
+        data_tests: [unique, not_null]
+      - name: nome
+        data_tests: [not_null]
+      - name: tipo
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [NACIONAL, BANCARIO]

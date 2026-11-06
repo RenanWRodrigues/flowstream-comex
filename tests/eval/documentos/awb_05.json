@@ -1,0 +1,37 @@
+{
+  "arquivo": "awb_05.pdf",
+  "tipo": "AWB",
+  "layout": "en_tabela",
+  "escaneado": false,
+  "erro_proposital": "AWB com dígito verificador errado",
+  "regra_esperada": "FORMATO",
+  "injecao": false,
+  "decisao_esperada": "REVISAO",
+  "texto": "AIR WAYBILL\nAir Waybill Number 047-89749532\nShipper's Name Ningbo Machinery Export Co., Ltd.\nConsignee's Name Quimica Litoral Norte Ltda\nAirport of Departure LIS - Lisboa\nAirport of Destination VCP - Campinas\nFlight / Date TP 4666  25 JUN 2026\nNo. of Pieces Gross Weight (kg) Chargeable Weight (kg)\n2 2,357.19 -\nNature of Goods Gears, steel",
+  "campos": {
+    "numero_awb": "047-89749532",
+    "embarcador": "Ningbo Machinery Export Co., Ltd.",
+    "consignatario": "Quimica Litoral Norte Ltda",
+    "aeroporto_origem": "LIS",
+    "aeroporto_destino": "VCP",
+    "voo": "TP 4666",
+    "data_voo": "2026-06-25",
+    "volumes": 2,
+    "peso_bruto_kg": "2357.19",
+    "peso_taxavel_kg": null,
+    "descricao_mercadoria": "Gears, steel"
+  },
+  "evidencias": {
+    "numero_awb": "Air Waybill Number 047-89749532",
+    "embarcador": "Shipper's Name Ningbo Machinery Export Co., Ltd.",
+    "consignatario": "Consignee's Name Quimica Litoral Norte Ltda",
+    "aeroporto_origem": "Airport of Departure LIS - Lisboa",
+    "aeroporto_destino": "Airport of Destination VCP - Campinas",
+    "voo": "Flight / Date TP 4666  25 JUN 2026",
+    "data_voo": "Flight / Date TP 4666  25 JUN 2026",
+    "volumes": "2 2,357.19 -",
+    "peso_bruto_kg": "2 2,357.19 -",
+    "peso_taxavel_kg": null,
+    "descricao_mercadoria": "Nature of Goods Gears, steel"
+  }
+}

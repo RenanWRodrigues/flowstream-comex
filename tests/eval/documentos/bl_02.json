@@ -1,0 +1,81 @@
+{
+  "arquivo": "bl_02.pdf",
+  "tipo": "BL",
+  "layout": "en_tabela",
+  "escaneado": true,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "BILL OF LADING\nBill of Lading Number FSLX2735420496\nShipper Milano Tessuti S.r.l.\nConsignee Metalurgica Vale Verde Ltda\nNotify Party Same as consignee\nPort of Loading USHOU (Houston)\nPort of Discharge BRITJ (Itajai)\nVessel / Voyage SEA LANTERN / 941W\nShipped on Board Date 23 MAR 2026\nContainer No. Seal No. Type Packages Gross Wt (kg)\nBLHU9982070 SL677577 40HC 121 12,747.89\nFSCU3044254 SL835773 20GP 325 18,375.04\nTOTAL 446 packages 31,122.93 kg\nMeasurement 99.42 m3\nDescription of Goods Gears, steel\nHS Codes 84834010\nFreight Terms FREIGHT PREPAID",
+  "campos": {
+    "numero_bl": "FSLX2735420496",
+    "embarcador": "Milano Tessuti S.r.l.",
+    "consignatario": "Metalurgica Vale Verde Ltda",
+    "notificar": "Same as consignee",
+    "porto_carregamento": "USHOU",
+    "porto_descarga": "BRITJ",
+    "navio": "SEA LANTERN",
+    "viagem": "941W",
+    "data_embarque": "2026-03-23",
+    "conteineres": [
+      {
+        "numero": "BLHU9982070",
+        "lacre": "SL677577",
+        "tipo": "40HC",
+        "volumes": 121,
+        "peso_bruto_kg": "12747.89"
+      },
+      {
+        "numero": "FSCU3044254",
+        "lacre": "SL835773",
+        "tipo": "20GP",
+        "volumes": 325,
+        "peso_bruto_kg": "18375.04"
+      }
+    ],
+    "volumes_total": 446,
+    "peso_bruto_total_kg": "31122.93",
+    "cubagem_m3": "99.42",
+    "descricao_mercadoria": "Gears, steel",
+    "ncm": [
+      "84834010"
+    ],
+    "frete": "PREPAID"
+  },
+  "evidencias": {
+    "numero_bl": "Bill of Lading Number FSLX2735420496",
+    "embarcador": "Shipper Milano Tessuti S.r.l.",
+    "consignatario": "Consignee Metalurgica Vale Verde Ltda",
+    "notificar": "Notify Party Same as consignee",
+    "porto_carregamento": "Port of Loading USHOU (Houston)",
+    "porto_descarga": "Port of Discharge BRITJ (Itajai)",
+    "navio": "Vessel / Voyage SEA LANTERN / 941W",
+    "viagem": "Vessel / Voyage SEA LANTERN / 941W",
+    "data_embarque": "Shipped on Board Date 23 MAR 2026",
+    "conteineres": [
+      {
+        "numero": "BLHU9982070 SL677577 40HC 121 12,747.89",
+        "lacre": "BLHU9982070 SL677577 40HC 121 12,747.89",
+        "tipo": "BLHU9982070 SL677577 40HC 121 12,747.89",
+        "volumes": "BLHU9982070 SL677577 40HC 121 12,747.89",
+        "peso_bruto_kg": "BLHU9982070 SL677577 40HC 121 12,747.89"
+      },
+      {
+        "numero": "FSCU3044254 SL835773 20GP 325 18,375.04",
+        "lacre": "FSCU3044254 SL835773 20GP 325 18,375.04",
+        "tipo": "FSCU3044254 SL835773 20GP 325 18,375.04",
+        "volumes": "FSCU3044254 SL835773 20GP 325 18,375.04",
+        "peso_bruto_kg": "FSCU3044254 SL835773 20GP 325 18,375.04"
+      }
+    ],
+    "volumes_total": "TOTAL 446 packages 31,122.93 kg",
+    "peso_bruto_total_kg": "TOTAL 446 packages 31,122.93 kg",
+    "cubagem_m3": "Measurement 99.42 m3",
+    "descricao_mercadoria": "Description of Goods Gears, steel",
+    "ncm": [
+      "HS Codes 84834010"
+    ],
+    "frete": "Freight Terms FREIGHT PREPAID"
+  }
+}

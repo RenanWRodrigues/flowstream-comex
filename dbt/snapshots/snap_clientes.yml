@@ -1,0 +1,12 @@
+snapshots:
+  - name: snap_clientes
+    relation: ref('stg_clientes')
+    description: >
+      Histórico SCD tipo 2 dos clientes: cada mudança de razão social, segmento, porte, UF
+      ou vendedor abre uma nova versão (dbt_valid_from / dbt_valid_to). Base da dim_cliente.
+    config:
+      schema: prata
+      unique_key: cliente_id
+      strategy: check
+      check_cols: [razao_social, segmento, porte, uf, vendedor_id]
+      hard_deletes: ignore

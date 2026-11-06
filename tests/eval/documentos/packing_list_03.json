@@ -1,0 +1,67 @@
+{
+  "arquivo": "packing_list_03.pdf",
+  "tipo": "PACKING_LIST",
+  "layout": "pt_chave_valor",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "ROMANEIO DE CARGA (PACKING LIST)\nNúmero do romaneio: PL-2026-1459\nFatura de referência: INV-2026-4209\nData de emissão: 24/02/2026\nExportador: Rotterdam Chemicals B.V.\nImportador: Importadora Exemplo Ltda\nItem 1  Rolamentos de esferas  qtd 4.870  286 volumes  líquido 10.381,35 kg  bruto 11.004,23 kg\nItem 2  Tecido de algodão  qtd 4.494  110 volumes  líquido 10.793,10 kg  bruto 11.656,55 kg\nTotal de volumes: 396\nPeso líquido total: 21.174,45 kg\nPeso bruto total: 22.660,78 kg\nCubagem total: 5,28 m³",
+  "campos": {
+    "numero_packing_list": "PL-2026-1459",
+    "numero_invoice": "INV-2026-4209",
+    "data_emissao": "2026-02-24",
+    "exportador": "Rotterdam Chemicals B.V.",
+    "importador": "Importadora Exemplo Ltda",
+    "volumes_total": 396,
+    "peso_bruto_total_kg": "22660.78",
+    "peso_liquido_total_kg": "21174.45",
+    "cubagem_m3": "5.28",
+    "conteineres": [],
+    "itens": [
+      {
+        "descricao": "Rolamentos de esferas",
+        "quantidade": "4870",
+        "volumes": 286,
+        "peso_liquido_kg": "10381.35",
+        "peso_bruto_kg": "11004.23"
+      },
+      {
+        "descricao": "Tecido de algodão",
+        "quantidade": "4494",
+        "volumes": 110,
+        "peso_liquido_kg": "10793.1",
+        "peso_bruto_kg": "11656.55"
+      }
+    ]
+  },
+  "evidencias": {
+    "numero_packing_list": "Número do romaneio: PL-2026-1459",
+    "numero_invoice": "Fatura de referência: INV-2026-4209",
+    "data_emissao": "Data de emissão: 24/02/2026",
+    "exportador": "Exportador: Rotterdam Chemicals B.V.",
+    "importador": "Importador: Importadora Exemplo Ltda",
+    "volumes_total": "Total de volumes: 396",
+    "peso_bruto_total_kg": "Peso bruto total: 22.660,78 kg",
+    "peso_liquido_total_kg": "Peso líquido total: 21.174,45 kg",
+    "cubagem_m3": "Cubagem total: 5,28 m³",
+    "conteineres": [],
+    "itens": [
+      {
+        "descricao": "Item 1  Rolamentos de esferas  qtd 4.870  286 volumes  líquido 10.381,35 kg  bruto 11.004,23 kg",
+        "quantidade": "Item 1  Rolamentos de esferas  qtd 4.870  286 volumes  líquido 10.381,35 kg  bruto 11.004,23 kg",
+        "volumes": "Item 1  Rolamentos de esferas  qtd 4.870  286 volumes  líquido 10.381,35 kg  bruto 11.004,23 kg",
+        "peso_liquido_kg": "Item 1  Rolamentos de esferas  qtd 4.870  286 volumes  líquido 10.381,35 kg  bruto 11.004,23 kg",
+        "peso_bruto_kg": "Item 1  Rolamentos de esferas  qtd 4.870  286 volumes  líquido 10.381,35 kg  bruto 11.004,23 kg"
+      },
+      {
+        "descricao": "Item 2  Tecido de algodão  qtd 4.494  110 volumes  líquido 10.793,10 kg  bruto 11.656,55 kg",
+        "quantidade": "Item 2  Tecido de algodão  qtd 4.494  110 volumes  líquido 10.793,10 kg  bruto 11.656,55 kg",
+        "volumes": "Item 2  Tecido de algodão  qtd 4.494  110 volumes  líquido 10.793,10 kg  bruto 11.656,55 kg",
+        "peso_liquido_kg": "Item 2  Tecido de algodão  qtd 4.494  110 volumes  líquido 10.793,10 kg  bruto 11.656,55 kg",
+        "peso_bruto_kg": "Item 2  Tecido de algodão  qtd 4.494  110 volumes  líquido 10.793,10 kg  bruto 11.656,55 kg"
+      }
+    ]
+  }
+}

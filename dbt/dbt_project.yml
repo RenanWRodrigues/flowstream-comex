@@ -1,0 +1,41 @@
+# Projeto dbt do FlowStream-Comex.
+# Camadas: staging e intermediate (prata, P05) e marts (ouro, P06). Seeds em prata.
+name: flowstream
+version: "0.1.0"
+config-version: 2
+profile: flowstream
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  flowstream:
+    staging:
+      # 1 modelo por tabela de origem: só renomear, tipar, padronizar.
+      +materialized: view
+      +schema: prata
+    intermediate:
+      # Joins e regras reutilizáveis; viram CTEs dentro de quem os usa.
+      +materialized: ephemeral
+      +schema: prata
+    marts:
+      # Star schema e KPIs consumidos pelo Power BI, pela API e pelos alertas.
+      +materialized: table
+      +schema: ouro
+
+seeds:
+  flowstream:
+    # Dados de referência ficam na camada prata (já padronizados).
+    +schema: prata
+    +quote_columns: false
+
+vars:
+  # Data de referência do risco de demurrage (AAAA-MM-DD). Nulo = data do último evento de
+  # tracking, porque os dados sintéticos param em 01/11/2026. Em produção: a data de hoje.
+  # Ex.: make dbt-show ... ou dbt build --vars '{data_referencia: 2026-10-15}'
+  data_referencia: null

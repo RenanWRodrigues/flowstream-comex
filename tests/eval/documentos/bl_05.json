@@ -1,0 +1,81 @@
+{
+  "arquivo": "bl_05.pdf",
+  "tipo": "BL",
+  "layout": "en_tabela",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "BILL OF LADING\nBill of Lading Number FSLX6853823808\nShipper Houston Valve Supply LLC\nConsignee Metalurgica Vale Verde Ltda\nNotify Party Same as consignee\nPort of Loading NLRTM (Rotterdam)\nPort of Discharge BRITJ (Itajai)\nVessel CAPE ITAPOA\nShipped on Board Date 24 FEB 2026\nContainer No. Seal No. Type Packages Gross Wt (kg)\nFSCU8093821 SL678864 20GP 338 25,934.71\nFSCU2890730 SL196918 40GP 286 10,573.01\nTOTAL 624 packages 36,507.72 kg\nMeasurement 101.48 m3\nDescription of Goods Measuring instruments\nHS Codes 90318099\nFreight Terms FREIGHT PREPAID",
+  "campos": {
+    "numero_bl": "FSLX6853823808",
+    "embarcador": "Houston Valve Supply LLC",
+    "consignatario": "Metalurgica Vale Verde Ltda",
+    "notificar": "Same as consignee",
+    "porto_carregamento": "NLRTM",
+    "porto_descarga": "BRITJ",
+    "navio": "CAPE ITAPOA",
+    "viagem": null,
+    "data_embarque": "2026-02-24",
+    "conteineres": [
+      {
+        "numero": "FSCU8093821",
+        "lacre": "SL678864",
+        "tipo": "20GP",
+        "volumes": 338,
+        "peso_bruto_kg": "25934.71"
+      },
+      {
+        "numero": "FSCU2890730",
+        "lacre": "SL196918",
+        "tipo": "40GP",
+        "volumes": 286,
+        "peso_bruto_kg": "10573.01"
+      }
+    ],
+    "volumes_total": 624,
+    "peso_bruto_total_kg": "36507.72",
+    "cubagem_m3": "101.48",
+    "descricao_mercadoria": "Measuring instruments",
+    "ncm": [
+      "90318099"
+    ],
+    "frete": "PREPAID"
+  },
+  "evidencias": {
+    "numero_bl": "Bill of Lading Number FSLX6853823808",
+    "embarcador": "Shipper Houston Valve Supply LLC",
+    "consignatario": "Consignee Metalurgica Vale Verde Ltda",
+    "notificar": "Notify Party Same as consignee",
+    "porto_carregamento": "Port of Loading NLRTM (Rotterdam)",
+    "porto_descarga": "Port of Discharge BRITJ (Itajai)",
+    "navio": "Vessel CAPE ITAPOA",
+    "viagem": null,
+    "data_embarque": "Shipped on Board Date 24 FEB 2026",
+    "conteineres": [
+      {
+        "numero": "FSCU8093821 SL678864 20GP 338 25,934.71",
+        "lacre": "FSCU8093821 SL678864 20GP 338 25,934.71",
+        "tipo": "FSCU8093821 SL678864 20GP 338 25,934.71",
+        "volumes": "FSCU8093821 SL678864 20GP 338 25,934.71",
+        "peso_bruto_kg": "FSCU8093821 SL678864 20GP 338 25,934.71"
+      },
+      {
+        "numero": "FSCU2890730 SL196918 40GP 286 10,573.01",
+        "lacre": "FSCU2890730 SL196918 40GP 286 10,573.01",
+        "tipo": "FSCU2890730 SL196918 40GP 286 10,573.01",
+        "volumes": "FSCU2890730 SL196918 40GP 286 10,573.01",
+        "peso_bruto_kg": "FSCU2890730 SL196918 40GP 286 10,573.01"
+      }
+    ],
+    "volumes_total": "TOTAL 624 packages 36,507.72 kg",
+    "peso_bruto_total_kg": "TOTAL 624 packages 36,507.72 kg",
+    "cubagem_m3": "Measurement 101.48 m3",
+    "descricao_mercadoria": "Description of Goods Measuring instruments",
+    "ncm": [
+      "HS Codes 90318099"
+    ],
+    "frete": "Freight Terms FREIGHT PREPAID"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "arquivo": "awb_04.pdf",
+  "tipo": "AWB",
+  "layout": "pt_chave_valor",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "CONHECIMENTO AÉREO (AIR WAYBILL)\nNúmero do AWB: 001-94038685\nEmbarcador: Houston Valve Supply LLC\nConsignatário: Metalurgica Vale Verde Ltda\nAeroporto de origem: MIA\nAeroporto de destino: GRU\nVoo: AA 8641 em 15/06/2026\nVolumes: 56\nPeso bruto: 2.119,65 kg\nMercadoria: Notebooks",
+  "campos": {
+    "numero_awb": "001-94038685",
+    "embarcador": "Houston Valve Supply LLC",
+    "consignatario": "Metalurgica Vale Verde Ltda",
+    "aeroporto_origem": "MIA",
+    "aeroporto_destino": "GRU",
+    "voo": "AA 8641",
+    "data_voo": "2026-06-15",
+    "volumes": 56,
+    "peso_bruto_kg": "2119.65",
+    "peso_taxavel_kg": null,
+    "descricao_mercadoria": "Notebooks"
+  },
+  "evidencias": {
+    "numero_awb": "Número do AWB: 001-94038685",
+    "embarcador": "Embarcador: Houston Valve Supply LLC",
+    "consignatario": "Consignatário: Metalurgica Vale Verde Ltda",
+    "aeroporto_origem": "Aeroporto de origem: MIA",
+    "aeroporto_destino": "Aeroporto de destino: GRU",
+    "voo": "Voo: AA 8641 em 15/06/2026",
+    "data_voo": "Voo: AA 8641 em 15/06/2026",
+    "volumes": "Volumes: 56",
+    "peso_bruto_kg": "Peso bruto: 2.119,65 kg",
+    "peso_taxavel_kg": null,
+    "descricao_mercadoria": "Mercadoria: Notebooks"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "arquivo": "packing_list_06.pdf",
+  "tipo": "PACKING_LIST",
+  "layout": "pt_chave_valor",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "ROMANEIO DE CARGA (PACKING LIST)\nNúmero do romaneio: PL-2026-2664\nFatura de referência: CI-2026-3807\nData de emissão: 14/04/2026\nExportador: Busan Steel Components Co., Ltd.\nImportador: Textil Serra Azul Ltda\nContêineres: STRU7865543\nItem 1  Válvulas de aço  qtd 1.774  29 volumes  líquido 10.284,78 kg  bruto 11.004,71 kg\nItem 2  Engrenagens de aço  qtd 3.135  249 volumes  líquido 5.737,74 kg  bruto 5.909,87 kg\nItem 3  Resina de polietileno  qtd 824  143 volumes  líquido 1.895,64 kg  bruto 1.990,42 kg\nTotal de volumes: 421\nPeso líquido total: 17.918,16 kg\nPeso bruto total: 18.905,00 kg\nCubagem total: 24,86 m³",
+  "campos": {
+    "numero_packing_list": "PL-2026-2664",
+    "numero_invoice": "CI-2026-3807",
+    "data_emissao": "2026-04-14",
+    "exportador": "Busan Steel Components Co., Ltd.",
+    "importador": "Textil Serra Azul Ltda",
+    "volumes_total": 421,
+    "peso_bruto_total_kg": "18905.00",
+    "peso_liquido_total_kg": "17918.16",
+    "cubagem_m3": "24.86",
+    "conteineres": [
+      "STRU7865543"
+    ],
+    "itens": [
+      {
+        "descricao": "Válvulas de aço",
+        "quantidade": "1774",
+        "volumes": 29,
+        "peso_liquido_kg": "10284.78",
+        "peso_bruto_kg": "11004.71"
+      },
+      {
+        "descricao": "Engrenagens de aço",
+        "quantidade": "3135",
+        "volumes": 249,
+        "peso_liquido_kg": "5737.74",
+        "peso_bruto_kg": "5909.87"
+      },
+      {
+        "descricao": "Resina de polietileno",
+        "quantidade": "824",
+        "volumes": 143,
+        "peso_liquido_kg": "1895.64",
+        "peso_bruto_kg": "1990.42"
+      }
+    ]
+  },
+  "evidencias": {
+    "numero_packing_list": "Número do romaneio: PL-2026-2664",
+    "numero_invoice": "Fatura de referência: CI-2026-3807",
+    "data_emissao": "Data de emissão: 14/04/2026",
+    "exportador": "Exportador: Busan Steel Components Co., Ltd.",
+    "importador": "Importador: Textil Serra Azul Ltda",
+    "volumes_total": "Total de volumes: 421",
+    "peso_bruto_total_kg": "Peso bruto total: 18.905,00 kg",
+    "peso_liquido_total_kg": "Peso líquido total: 17.918,16 kg",
+    "cubagem_m3": "Cubagem total: 24,86 m³",
+    "conteineres": [
+      "Contêineres: STRU7865543"
+    ],
+    "itens": [
+      {
+        "descricao": "Item 1  Válvulas de aço  qtd 1.774  29 volumes  líquido 10.284,78 kg  bruto 11.004,71 kg",
+        "quantidade": "Item 1  Válvulas de aço  qtd 1.774  29 volumes  líquido 10.284,78 kg  bruto 11.004,71 kg",
+        "volumes": "Item 1  Válvulas de aço  qtd 1.774  29 volumes  líquido 10.284,78 kg  bruto 11.004,71 kg",
+        "peso_liquido_kg": "Item 1  Válvulas de aço  qtd 1.774  29 volumes  líquido 10.284,78 kg  bruto 11.004,71 kg",
+        "peso_bruto_kg": "Item 1  Válvulas de aço  qtd 1.774  29 volumes  líquido 10.284,78 kg  bruto 11.004,71 kg"
+      },
+      {
+        "descricao": "Item 2  Engrenagens de aço  qtd 3.135  249 volumes  líquido 5.737,74 kg  bruto 5.909,87 kg",
+        "quantidade": "Item 2  Engrenagens de aço  qtd 3.135  249 volumes  líquido 5.737,74 kg  bruto 5.909,87 kg",
+        "volumes": "Item 2  Engrenagens de aço  qtd 3.135  249 volumes  líquido 5.737,74 kg  bruto 5.909,87 kg",
+        "peso_liquido_kg": "Item 2  Engrenagens de aço  qtd 3.135  249 volumes  líquido 5.737,74 kg  bruto 5.909,87 kg",
+        "peso_bruto_kg": "Item 2  Engrenagens de aço  qtd 3.135  249 volumes  líquido 5.737,74 kg  bruto 5.909,87 kg"
+      },
+      {
+        "descricao": "Item 3  Resina de polietileno  qtd 824  143 volumes  líquido 1.895,64 kg  bruto 1.990,42 kg",
+        "quantidade": "Item 3  Resina de polietileno  qtd 824  143 volumes  líquido 1.895,64 kg  bruto 1.990,42 kg",
+        "volumes": "Item 3  Resina de polietileno  qtd 824  143 volumes  líquido 1.895,64 kg  bruto 1.990,42 kg",
+        "peso_liquido_kg": "Item 3  Resina de polietileno  qtd 824  143 volumes  líquido 1.895,64 kg  bruto 1.990,42 kg",
+        "peso_bruto_kg": "Item 3  Resina de polietileno  qtd 824  143 volumes  líquido 1.895,64 kg  bruto 1.990,42 kg"
+      }
+    ]
+  }
+}

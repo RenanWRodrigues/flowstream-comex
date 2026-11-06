@@ -1,0 +1,37 @@
+{
+  "arquivo": "awb_10.pdf",
+  "tipo": "AWB",
+  "layout": "en_chave_valor",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "AIR WAYBILL\nAWB No.: 074-14386632\nShipper: Busan Steel Components Co., Ltd.\nConsignee: Metalurgica Vale Verde Ltda\nAirport of Departure: AMS\nAirport of Destination: VCP\nNo. of pieces: 43\nGross weight: 1,216.94 kg\nChargeable weight: 1,521.18 kg\nNature of goods: Ceramic tiles",
+  "campos": {
+    "numero_awb": "074-14386632",
+    "embarcador": "Busan Steel Components Co., Ltd.",
+    "consignatario": "Metalurgica Vale Verde Ltda",
+    "aeroporto_origem": "AMS",
+    "aeroporto_destino": "VCP",
+    "voo": null,
+    "data_voo": null,
+    "volumes": 43,
+    "peso_bruto_kg": "1216.94",
+    "peso_taxavel_kg": "1521.18",
+    "descricao_mercadoria": "Ceramic tiles"
+  },
+  "evidencias": {
+    "numero_awb": "AWB No.: 074-14386632",
+    "embarcador": "Shipper: Busan Steel Components Co., Ltd.",
+    "consignatario": "Consignee: Metalurgica Vale Verde Ltda",
+    "aeroporto_origem": "Airport of Departure: AMS",
+    "aeroporto_destino": "Airport of Destination: VCP",
+    "voo": null,
+    "data_voo": null,
+    "volumes": "No. of pieces: 43",
+    "peso_bruto_kg": "Gross weight: 1,216.94 kg",
+    "peso_taxavel_kg": "Chargeable weight: 1,521.18 kg",
+    "descricao_mercadoria": "Nature of goods: Ceramic tiles"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "arquivo": "awb_08.pdf",
+  "tipo": "AWB",
+  "layout": "en_tabela",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "AIR WAYBILL\nAir Waybill Number 047-16020712\nShipper's Name Houston Valve Supply LLC\nConsignee's Name Quimica Litoral Norte Ltda\nAirport of Departure LIS - Lisboa\nAirport of Destination NVT - Navegantes\nFlight / Date TP 4145  15 JUN 2026\nNo. of Pieces Gross Weight (kg) Chargeable Weight (kg)\n12 1,824.34 2,280.42\nNature of Goods Gears, steel",
+  "campos": {
+    "numero_awb": "047-16020712",
+    "embarcador": "Houston Valve Supply LLC",
+    "consignatario": "Quimica Litoral Norte Ltda",
+    "aeroporto_origem": "LIS",
+    "aeroporto_destino": "NVT",
+    "voo": "TP 4145",
+    "data_voo": "2026-06-15",
+    "volumes": 12,
+    "peso_bruto_kg": "1824.34",
+    "peso_taxavel_kg": "2280.42",
+    "descricao_mercadoria": "Gears, steel"
+  },
+  "evidencias": {
+    "numero_awb": "Air Waybill Number 047-16020712",
+    "embarcador": "Shipper's Name Houston Valve Supply LLC",
+    "consignatario": "Consignee's Name Quimica Litoral Norte Ltda",
+    "aeroporto_origem": "Airport of Departure LIS - Lisboa",
+    "aeroporto_destino": "Airport of Destination NVT - Navegantes",
+    "voo": "Flight / Date TP 4145  15 JUN 2026",
+    "data_voo": "Flight / Date TP 4145  15 JUN 2026",
+    "volumes": "12 1,824.34 2,280.42",
+    "peso_bruto_kg": "12 1,824.34 2,280.42",
+    "peso_taxavel_kg": "12 1,824.34 2,280.42",
+    "descricao_mercadoria": "Nature of Goods Gears, steel"
+  }
+}

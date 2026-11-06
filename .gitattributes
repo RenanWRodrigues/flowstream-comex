@@ -1,0 +1,11 @@
+# Quebras de linha LF no repositório (Windows e Linux iguais)
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+
+# Binários
+*.pbix binary
+*.parquet binary
+*.pdf binary
+*.png binary
+*.jpg binary

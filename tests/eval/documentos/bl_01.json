@@ -1,0 +1,95 @@
+{
+  "arquivo": "bl_01.pdf",
+  "tipo": "BL",
+  "layout": "en_chave_valor",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "BILL OF LADING\nB/L No.: FSLX1497965269\nShipper: Shanghai Polymer Trading Co., Ltd.\nConsignee: Comercial Atlantico Sul Ltda\nPort of Loading: DEHAM - Hamburg\nPort of Discharge: BRITJ - Itajai\nVessel: ATLANTIC AURORA    Voyage: 984E\nShipped on board: 21/04/2026\nContainer BLHU8645455  Seal SL995863  40HC  331 packages  24,253.44 kg\nContainer BLHU3875218  Seal SL807547  20GP  89 packages  17,839.62 kg\nContainer STRU0939520  Seal SL482400  20GP  102 packages  8,609.39 kg\nTotal packages: 522\nTotal gross weight: 50,702.45 kg\nMeasurement: 87.60 m3\nDescription of goods: Laptop computers\nHS Code: 8471.30.12\nFreight: COLLECT",
+  "campos": {
+    "numero_bl": "FSLX1497965269",
+    "embarcador": "Shanghai Polymer Trading Co., Ltd.",
+    "consignatario": "Comercial Atlantico Sul Ltda",
+    "notificar": null,
+    "porto_carregamento": "DEHAM",
+    "porto_descarga": "BRITJ",
+    "navio": "ATLANTIC AURORA",
+    "viagem": "984E",
+    "data_embarque": "2026-04-21",
+    "conteineres": [
+      {
+        "numero": "BLHU8645455",
+        "lacre": "SL995863",
+        "tipo": "40HC",
+        "volumes": 331,
+        "peso_bruto_kg": "24253.44"
+      },
+      {
+        "numero": "BLHU3875218",
+        "lacre": "SL807547",
+        "tipo": "20GP",
+        "volumes": 89,
+        "peso_bruto_kg": "17839.62"
+      },
+      {
+        "numero": "STRU0939520",
+        "lacre": "SL482400",
+        "tipo": "20GP",
+        "volumes": 102,
+        "peso_bruto_kg": "8609.39"
+      }
+    ],
+    "volumes_total": 522,
+    "peso_bruto_total_kg": "50702.45",
+    "cubagem_m3": "87.6",
+    "descricao_mercadoria": "Laptop computers",
+    "ncm": [
+      "84713012"
+    ],
+    "frete": "COLLECT"
+  },
+  "evidencias": {
+    "numero_bl": "B/L No.: FSLX1497965269",
+    "embarcador": "Shipper: Shanghai Polymer Trading Co., Ltd.",
+    "consignatario": "Consignee: Comercial Atlantico Sul Ltda",
+    "notificar": null,
+    "porto_carregamento": "Port of Loading: DEHAM - Hamburg",
+    "porto_descarga": "Port of Discharge: BRITJ - Itajai",
+    "navio": "Vessel: ATLANTIC AURORA    Voyage: 984E",
+    "viagem": "Vessel: ATLANTIC AURORA    Voyage: 984E",
+    "data_embarque": "Shipped on board: 21/04/2026",
+    "conteineres": [
+      {
+        "numero": "Container BLHU8645455  Seal SL995863  40HC  331 packages  24,253.44 kg",
+        "lacre": "Container BLHU8645455  Seal SL995863  40HC  331 packages  24,253.44 kg",
+        "tipo": "Container BLHU8645455  Seal SL995863  40HC  331 packages  24,253.44 kg",
+        "volumes": "Container BLHU8645455  Seal SL995863  40HC  331 packages  24,253.44 kg",
+        "peso_bruto_kg": "Container BLHU8645455  Seal SL995863  40HC  331 packages  24,253.44 kg"
+      },
+      {
+        "numero": "Container BLHU3875218  Seal SL807547  20GP  89 packages  17,839.62 kg",
+        "lacre": "Container BLHU3875218  Seal SL807547  20GP  89 packages  17,839.62 kg",
+        "tipo": "Container BLHU3875218  Seal SL807547  20GP  89 packages  17,839.62 kg",
+        "volumes": "Container BLHU3875218  Seal SL807547  20GP  89 packages  17,839.62 kg",
+        "peso_bruto_kg": "Container BLHU3875218  Seal SL807547  20GP  89 packages  17,839.62 kg"
+      },
+      {
+        "numero": "Container STRU0939520  Seal SL482400  20GP  102 packages  8,609.39 kg",
+        "lacre": "Container STRU0939520  Seal SL482400  20GP  102 packages  8,609.39 kg",
+        "tipo": "Container STRU0939520  Seal SL482400  20GP  102 packages  8,609.39 kg",
+        "volumes": "Container STRU0939520  Seal SL482400  20GP  102 packages  8,609.39 kg",
+        "peso_bruto_kg": "Container STRU0939520  Seal SL482400  20GP  102 packages  8,609.39 kg"
+      }
+    ],
+    "volumes_total": "Total packages: 522",
+    "peso_bruto_total_kg": "Total gross weight: 50,702.45 kg",
+    "cubagem_m3": "Measurement: 87.60 m3",
+    "descricao_mercadoria": "Description of goods: Laptop computers",
+    "ncm": [
+      "HS Code: 8471.30.12"
+    ],
+    "frete": "Freight: COLLECT"
+  }
+}

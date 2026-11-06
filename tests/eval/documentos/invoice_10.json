@@ -1,0 +1,57 @@
+{
+  "arquivo": "invoice_10.pdf",
+  "tipo": "INVOICE",
+  "layout": "en_chave_valor",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "COMMERCIAL INVOICE\nInvoice No.: CI-2026-9227\nDate: 14/06/2026\nSeller: Hamburg Industrietechnik GmbH\nBuyer: Comercial Atlantico Sul Ltda  CNPJ 00.000.456/0001-51\nIncoterm: CIF Santos\nCurrency: CNY\nItem 1  Laptop computers  NCM 8471.30.12  2,003 KG  x  CNY 200.58  =  CNY 401,761.74\nTotal: CNY 401,761.74",
+  "campos": {
+    "numero_invoice": "CI-2026-9227",
+    "data_emissao": "2026-06-14",
+    "exportador": "Hamburg Industrietechnik GmbH",
+    "importador": "Comercial Atlantico Sul Ltda",
+    "importador_cnpj": "00.000.456/0001-51",
+    "incoterm": "CIF",
+    "moeda": "CNY",
+    "itens": [
+      {
+        "descricao": "Laptop computers",
+        "ncm": "84713012",
+        "quantidade": "2003",
+        "unidade": "KG",
+        "valor_unitario": "200.58",
+        "valor_total": "401761.74"
+      }
+    ],
+    "valor_total": "401761.74",
+    "pais_origem": null,
+    "frete": null,
+    "seguro": null
+  },
+  "evidencias": {
+    "numero_invoice": "Invoice No.: CI-2026-9227",
+    "data_emissao": "Date: 14/06/2026",
+    "exportador": "Seller: Hamburg Industrietechnik GmbH",
+    "importador": "Buyer: Comercial Atlantico Sul Ltda  CNPJ 00.000.456/0001-51",
+    "importador_cnpj": "Buyer: Comercial Atlantico Sul Ltda  CNPJ 00.000.456/0001-51",
+    "incoterm": "Incoterm: CIF Santos",
+    "moeda": "Currency: CNY",
+    "itens": [
+      {
+        "descricao": "Item 1  Laptop computers  NCM 8471.30.12  2,003 KG  x  CNY 200.58  =  CNY 401,761.74",
+        "ncm": "Item 1  Laptop computers  NCM 8471.30.12  2,003 KG  x  CNY 200.58  =  CNY 401,761.74",
+        "quantidade": "Item 1  Laptop computers  NCM 8471.30.12  2,003 KG  x  CNY 200.58  =  CNY 401,761.74",
+        "unidade": "Item 1  Laptop computers  NCM 8471.30.12  2,003 KG  x  CNY 200.58  =  CNY 401,761.74",
+        "valor_unitario": "Item 1  Laptop computers  NCM 8471.30.12  2,003 KG  x  CNY 200.58  =  CNY 401,761.74",
+        "valor_total": "Item 1  Laptop computers  NCM 8471.30.12  2,003 KG  x  CNY 200.58  =  CNY 401,761.74"
+      }
+    ],
+    "valor_total": "Total: CNY 401,761.74",
+    "pais_origem": null,
+    "frete": null,
+    "seguro": null
+  }
+}

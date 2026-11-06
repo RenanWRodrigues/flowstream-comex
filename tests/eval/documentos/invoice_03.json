@@ -1,0 +1,57 @@
+{
+  "arquivo": "invoice_03.pdf",
+  "tipo": "INVOICE",
+  "layout": "pt_chave_valor",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "FATURA COMERCIAL (COMMERCIAL INVOICE)\nNúmero da fatura: INV-2026-7458\nData de emissão: 17/01/2026\nExportador: Ningbo Machinery Export Co., Ltd.\nImportador: Importadora Exemplo Ltda\nCNPJ do importador: 00.000.123/0001-22\nIncoterm: FCA Rotterdam\nMoeda: USD\nItem 1  Engrenagens de aço  NCM 8483.40.10  3.478 PCS  x  102,95  =  358.060,10\nValor total: USD 358.060,10\nPaís de origem: China",
+  "campos": {
+    "numero_invoice": "INV-2026-7458",
+    "data_emissao": "2026-01-17",
+    "exportador": "Ningbo Machinery Export Co., Ltd.",
+    "importador": "Importadora Exemplo Ltda",
+    "importador_cnpj": "00.000.123/0001-22",
+    "incoterm": "FCA",
+    "moeda": "USD",
+    "itens": [
+      {
+        "descricao": "Engrenagens de aço",
+        "ncm": "84834010",
+        "quantidade": "3478",
+        "unidade": "PCS",
+        "valor_unitario": "102.95",
+        "valor_total": "358060.10"
+      }
+    ],
+    "valor_total": "358060.10",
+    "pais_origem": "China",
+    "frete": null,
+    "seguro": null
+  },
+  "evidencias": {
+    "numero_invoice": "Número da fatura: INV-2026-7458",
+    "data_emissao": "Data de emissão: 17/01/2026",
+    "exportador": "Exportador: Ningbo Machinery Export Co., Ltd.",
+    "importador": "Importador: Importadora Exemplo Ltda",
+    "importador_cnpj": "CNPJ do importador: 00.000.123/0001-22",
+    "incoterm": "Incoterm: FCA Rotterdam",
+    "moeda": "Moeda: USD",
+    "itens": [
+      {
+        "descricao": "Item 1  Engrenagens de aço  NCM 8483.40.10  3.478 PCS  x  102,95  =  358.060,10",
+        "ncm": "Item 1  Engrenagens de aço  NCM 8483.40.10  3.478 PCS  x  102,95  =  358.060,10",
+        "quantidade": "Item 1  Engrenagens de aço  NCM 8483.40.10  3.478 PCS  x  102,95  =  358.060,10",
+        "unidade": "Item 1  Engrenagens de aço  NCM 8483.40.10  3.478 PCS  x  102,95  =  358.060,10",
+        "valor_unitario": "Item 1  Engrenagens de aço  NCM 8483.40.10  3.478 PCS  x  102,95  =  358.060,10",
+        "valor_total": "Item 1  Engrenagens de aço  NCM 8483.40.10  3.478 PCS  x  102,95  =  358.060,10"
+      }
+    ],
+    "valor_total": "Valor total: USD 358.060,10",
+    "pais_origem": "País de origem: China",
+    "frete": null,
+    "seguro": null
+  }
+}

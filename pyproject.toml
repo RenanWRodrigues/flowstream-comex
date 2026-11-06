@@ -1,0 +1,110 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "flowstream-comex"
+version = "0.1.0"
+description = "Plataforma de dados de portfólio para um agente de cargas internacional."
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+license = { text = "MIT" }
+authors = [{ name = "Renan Rodrigues" }]
+dependencies = [
+    "pydantic>=2",
+    "pydantic-settings",
+    "typer",
+    "httpx",
+    "sqlalchemy>=2",
+    "psycopg[binary]",
+    "python-dateutil",
+    "tenacity",
+    "pyyaml",  # synthetic/config.yaml (aprovado no P03)
+    "fastapi",  # API REST (P08; parte da stack do CLAUDE.md)
+    "uvicorn",  # servidor ASGI da API
+    "watchdog",  # observa data/inbox com a API nativa do SO (P09, aprovado)
+    "pdfplumber",  # texto por página dos PDFs; renderiza a página para OCR (P10, aprovado)
+    "pytesseract",  # OCR de página escaneada; precisa do Tesseract no sistema (P10, aprovado)
+    "rapidfuzz",  # grounding: valor e evidence presentes no texto (P10, aprovado)
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "respx",
+    "mypy",
+    "types-PyYAML",
+    "reportlab",  # gera os PDFs de teste em tests/fixtures/documentos (P10, aprovado)
+    "ruff",
+    "pre-commit",
+    "pip-audit",
+    "dbt-core",
+    "dbt-postgres",
+]
+
+[project.scripts]
+flowstream = "flowstream.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/flowstream"]
+
+# ---------------------------------------------------------------- ruff
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+extend-exclude = ["dbt/target", "dbt/dbt_packages", "Prompts.md"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "N", "S", "SIM", "RUF"]
+
+[tool.ruff.lint.isort]
+# Explícito: no TDD o teste nasce antes do módulo, e o ruff não deduziria que é do projeto.
+known-first-party = ["flowstream"]
+
+[tool.ruff.lint.per-file-ignores]
+# S311: dados sintéticos precisam de random.Random com semente (reprodutível), não de
+# gerador criptográfico. Nenhum desses arquivos gera segredo.
+"tests/**" = ["S101", "S311"]                       # assert é o idioma do pytest
+"src/flowstream/domain/identifiers.py" = ["S311"]
+"src/flowstream/synthetic/**" = ["S311"]
+".claude/hooks/*" = ["S603", "S607"]                # hooks chamam o ruff via subprocess
+
+# ---------------------------------------------------------------- mypy
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src"]
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+# pytesseract não publica tipos (nem stubs); o uso fica isolado em flowstream.ai.pdf_text.
+module = ["pytesseract", "pytesseract.*"]
+ignore_missing_imports = true
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
+
+# ---------------------------------------------------------------- pytest
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers --import-mode=importlib --cov=src/flowstream --cov-report=term-missing"
+markers = [
+    "integration: precisa de serviços externos (Postgres, n8n, Ollama)",
+]
+filterwarnings = [
+    # Aviso interno do FastAPI/Starlette sobre o TestClient; não diz respeito ao projeto.
+    "ignore:Using `httpx` with `starlette.testclient` is deprecated",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["src/flowstream"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+skip_empty = true

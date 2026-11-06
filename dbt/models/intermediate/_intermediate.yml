@@ -1,0 +1,78 @@
+version: 2
+
+# Intermediate (prata, ephemeral): joins e regras reutilizáveis pelos marts do P06.
+
+models:
+  - name: int_ptax_diaria
+    description: >
+      PTAX de venda e compra para todo dia corrido, do primeiro dia com cotação até hoje.
+      Fins de semana e feriados repetem a última cotação útil. Inclui BRL com taxa 1,
+      para que toda conversão seja uma busca uniforme.
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [moeda, data]
+    columns:
+      - name: moeda
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [BRL, USD, EUR]
+      - name: data
+        data_tests: [not_null]
+      - name: cotacao_compra
+        data_tests: [not_null]
+      - name: cotacao_venda
+        description: R$ por unidade da moeda; usada nas conversões.
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "> 0"
+      - name: data_cotacao_ptax
+        description: Dia útil de onde veio a cotação (igual a `data` em dias úteis).
+        data_tests: [not_null]
+      - name: dia_com_ptax
+        description: Verdadeiro quando houve PTAX publicada no próprio dia.
+
+  - name: int_embarque_timeline
+    description: Prazos, atrasos e pontualidade de cada processo, em dias.
+    columns:
+      - name: processo
+        data_tests: [unique, not_null]
+      - name: transit_previsto_dias
+        description: ETA - ETD.
+        data_tests: [not_null]
+      - name: transit_real_dias
+        description: ATA - ATD; nulo enquanto não chegou.
+      - name: atraso_saida_dias
+        description: ATD - ETD (negativo = saiu antes do previsto).
+      - name: atraso_chegada_dias
+        description: ATA - ETA (negativo = chegou antes do previsto).
+      - name: chegou_no_prazo
+        description: ATA <= ETA + 1 dia (régua de on-time do projeto); nulo se não chegou.
+      - name: dias_uteis_booking_etd
+        description: Dias úteis entre o booking e o ETD (antecedência do booking).
+        data_tests: [not_null]
+      - name: transit_rota_dias
+        description: Transit time médio da rota no seed `rotas`.
+        data_tests: [not_null]
+
+  - name: int_financeiro_brl
+    description: >
+      Itens financeiros com o valor convertido para BRL pela PTAX de venda da data de
+      competência (macro to_brl).
+    columns:
+      - name: item_id
+        data_tests: [unique, not_null]
+      - name: valor_original
+      - name: taxa_cambio
+        description: PTAX de venda usada (1 para BRL).
+        data_tests: [not_null]
+      - name: valor_brl
+        description: Nulo só se faltar PTAX para a moeda e a data (o teste acusa).
+        data_tests: [not_null]
+      - name: valor_brl_assinado
+        description: Receita positiva, custo negativo (soma = margem do processo em BRL).
+        data_tests: [not_null]

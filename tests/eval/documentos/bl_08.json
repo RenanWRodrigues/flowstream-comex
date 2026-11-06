@@ -1,0 +1,81 @@
+{
+  "arquivo": "bl_08.pdf",
+  "tipo": "BL",
+  "layout": "en_tabela",
+  "escaneado": false,
+  "erro_proposital": "peso bruto total diferente da soma dos contêineres",
+  "regra_esperada": "COERENCIA",
+  "injecao": false,
+  "decisao_esperada": "REVISAO",
+  "texto": "BILL OF LADING\nBill of Lading Number FSLX5095300010\nShipper Houston Valve Supply LLC\nConsignee Textil Serra Azul Ltda\nPort of Loading DEHAM (Hamburg)\nPort of Discharge BRNVT (Navegantes)\nVessel / Voyage CAPE ITAPOA / 153N\nShipped on Board Date 25 MAR 2026\nContainer No. Seal No. Type Packages Gross Wt (kg)\nOCNU3710033 SL889451 40GP 248 16,238.53\nOCNU2208885 SL384151 40HC 287 12,923.98\nTOTAL 535 packages 30,662.51 kg\nMeasurement 52.76 m3\nDescription of Goods Cotton fabric\nHS Codes 52081200\nFreight Terms FREIGHT PREPAID",
+  "campos": {
+    "numero_bl": "FSLX5095300010",
+    "embarcador": "Houston Valve Supply LLC",
+    "consignatario": "Textil Serra Azul Ltda",
+    "notificar": null,
+    "porto_carregamento": "DEHAM",
+    "porto_descarga": "BRNVT",
+    "navio": "CAPE ITAPOA",
+    "viagem": "153N",
+    "data_embarque": "2026-03-25",
+    "conteineres": [
+      {
+        "numero": "OCNU3710033",
+        "lacre": "SL889451",
+        "tipo": "40GP",
+        "volumes": 248,
+        "peso_bruto_kg": "16238.53"
+      },
+      {
+        "numero": "OCNU2208885",
+        "lacre": "SL384151",
+        "tipo": "40HC",
+        "volumes": 287,
+        "peso_bruto_kg": "12923.98"
+      }
+    ],
+    "volumes_total": 535,
+    "peso_bruto_total_kg": "30662.51",
+    "cubagem_m3": "52.76",
+    "descricao_mercadoria": "Cotton fabric",
+    "ncm": [
+      "52081200"
+    ],
+    "frete": "PREPAID"
+  },
+  "evidencias": {
+    "numero_bl": "Bill of Lading Number FSLX5095300010",
+    "embarcador": "Shipper Houston Valve Supply LLC",
+    "consignatario": "Consignee Textil Serra Azul Ltda",
+    "notificar": null,
+    "porto_carregamento": "Port of Loading DEHAM (Hamburg)",
+    "porto_descarga": "Port of Discharge BRNVT (Navegantes)",
+    "navio": "Vessel / Voyage CAPE ITAPOA / 153N",
+    "viagem": "Vessel / Voyage CAPE ITAPOA / 153N",
+    "data_embarque": "Shipped on Board Date 25 MAR 2026",
+    "conteineres": [
+      {
+        "numero": "OCNU3710033 SL889451 40GP 248 16,238.53",
+        "lacre": "OCNU3710033 SL889451 40GP 248 16,238.53",
+        "tipo": "OCNU3710033 SL889451 40GP 248 16,238.53",
+        "volumes": "OCNU3710033 SL889451 40GP 248 16,238.53",
+        "peso_bruto_kg": "OCNU3710033 SL889451 40GP 248 16,238.53"
+      },
+      {
+        "numero": "OCNU2208885 SL384151 40HC 287 12,923.98",
+        "lacre": "OCNU2208885 SL384151 40HC 287 12,923.98",
+        "tipo": "OCNU2208885 SL384151 40HC 287 12,923.98",
+        "volumes": "OCNU2208885 SL384151 40HC 287 12,923.98",
+        "peso_bruto_kg": "OCNU2208885 SL384151 40HC 287 12,923.98"
+      }
+    ],
+    "volumes_total": "TOTAL 535 packages 30,662.51 kg",
+    "peso_bruto_total_kg": "TOTAL 535 packages 30,662.51 kg",
+    "cubagem_m3": "Measurement 52.76 m3",
+    "descricao_mercadoria": "Description of Goods Cotton fabric",
+    "ncm": [
+      "HS Codes 52081200"
+    ],
+    "frete": "Freight Terms FREIGHT PREPAID"
+  }
+}

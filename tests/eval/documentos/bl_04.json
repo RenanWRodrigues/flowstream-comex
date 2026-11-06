@@ -1,0 +1,97 @@
+{
+  "arquivo": "bl_04.pdf",
+  "tipo": "BL",
+  "layout": "en_chave_valor",
+  "escaneado": false,
+  "erro_proposital": "contêiner com dígito verificador errado",
+  "regra_esperada": "FORMATO",
+  "injecao": false,
+  "decisao_esperada": "REVISAO",
+  "texto": "BILL OF LADING\nB/L No.: FSLX3055858170\nShipper: Rotterdam Chemicals B.V.\nConsignee: Metalurgica Vale Verde Ltda\nNotify Party: Same as consignee\nPort of Loading: CNSHA - Shanghai\nPort of Discharge: BRSSZ - Santos\nVessel: CAPE ITAPOA    Voyage: 191N\nShipped on board: 20/01/2026\nContainer AZLU6874041  Seal SL911367  40HC  379 packages  10,335.82 kg\nContainer BLHU8494852  Seal SL524760  40GP  148 packages  23,779.03 kg\nContainer STRU5317242  Seal SL385774  40HC  222 packages  13,381.34 kg\nTotal packages: 749\nTotal gross weight: 47,496.19 kg\nMeasurement: 182.70 m3\nDescription of goods: Gears, steel and Cotton fabric\nHS Code: 8483.40.10, 5208.12.00\nFreight: COLLECT",
+  "campos": {
+    "numero_bl": "FSLX3055858170",
+    "embarcador": "Rotterdam Chemicals B.V.",
+    "consignatario": "Metalurgica Vale Verde Ltda",
+    "notificar": "Same as consignee",
+    "porto_carregamento": "CNSHA",
+    "porto_descarga": "BRSSZ",
+    "navio": "CAPE ITAPOA",
+    "viagem": "191N",
+    "data_embarque": "2026-01-20",
+    "conteineres": [
+      {
+        "numero": "AZLU6874041",
+        "lacre": "SL911367",
+        "tipo": "40HC",
+        "volumes": 379,
+        "peso_bruto_kg": "10335.82"
+      },
+      {
+        "numero": "BLHU8494852",
+        "lacre": "SL524760",
+        "tipo": "40GP",
+        "volumes": 148,
+        "peso_bruto_kg": "23779.03"
+      },
+      {
+        "numero": "STRU5317242",
+        "lacre": "SL385774",
+        "tipo": "40HC",
+        "volumes": 222,
+        "peso_bruto_kg": "13381.34"
+      }
+    ],
+    "volumes_total": 749,
+    "peso_bruto_total_kg": "47496.19",
+    "cubagem_m3": "182.7",
+    "descricao_mercadoria": "Gears, steel and Cotton fabric",
+    "ncm": [
+      "84834010",
+      "52081200"
+    ],
+    "frete": "COLLECT"
+  },
+  "evidencias": {
+    "numero_bl": "B/L No.: FSLX3055858170",
+    "embarcador": "Shipper: Rotterdam Chemicals B.V.",
+    "consignatario": "Consignee: Metalurgica Vale Verde Ltda",
+    "notificar": "Notify Party: Same as consignee",
+    "porto_carregamento": "Port of Loading: CNSHA - Shanghai",
+    "porto_descarga": "Port of Discharge: BRSSZ - Santos",
+    "navio": "Vessel: CAPE ITAPOA    Voyage: 191N",
+    "viagem": "Vessel: CAPE ITAPOA    Voyage: 191N",
+    "data_embarque": "Shipped on board: 20/01/2026",
+    "conteineres": [
+      {
+        "numero": "Container AZLU6874041  Seal SL911367  40HC  379 packages  10,335.82 kg",
+        "lacre": "Container AZLU6874041  Seal SL911367  40HC  379 packages  10,335.82 kg",
+        "tipo": "Container AZLU6874041  Seal SL911367  40HC  379 packages  10,335.82 kg",
+        "volumes": "Container AZLU6874041  Seal SL911367  40HC  379 packages  10,335.82 kg",
+        "peso_bruto_kg": "Container AZLU6874041  Seal SL911367  40HC  379 packages  10,335.82 kg"
+      },
+      {
+        "numero": "Container BLHU8494852  Seal SL524760  40GP  148 packages  23,779.03 kg",
+        "lacre": "Container BLHU8494852  Seal SL524760  40GP  148 packages  23,779.03 kg",
+        "tipo": "Container BLHU8494852  Seal SL524760  40GP  148 packages  23,779.03 kg",
+        "volumes": "Container BLHU8494852  Seal SL524760  40GP  148 packages  23,779.03 kg",
+        "peso_bruto_kg": "Container BLHU8494852  Seal SL524760  40GP  148 packages  23,779.03 kg"
+      },
+      {
+        "numero": "Container STRU5317242  Seal SL385774  40HC  222 packages  13,381.34 kg",
+        "lacre": "Container STRU5317242  Seal SL385774  40HC  222 packages  13,381.34 kg",
+        "tipo": "Container STRU5317242  Seal SL385774  40HC  222 packages  13,381.34 kg",
+        "volumes": "Container STRU5317242  Seal SL385774  40HC  222 packages  13,381.34 kg",
+        "peso_bruto_kg": "Container STRU5317242  Seal SL385774  40HC  222 packages  13,381.34 kg"
+      }
+    ],
+    "volumes_total": "Total packages: 749",
+    "peso_bruto_total_kg": "Total gross weight: 47,496.19 kg",
+    "cubagem_m3": "Measurement: 182.70 m3",
+    "descricao_mercadoria": "Description of goods: Gears, steel and Cotton fabric",
+    "ncm": [
+      "HS Code: 8483.40.10, 5208.12.00",
+      "HS Code: 8483.40.10, 5208.12.00"
+    ],
+    "frete": "Freight: COLLECT"
+  }
+}

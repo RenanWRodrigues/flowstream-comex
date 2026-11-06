@@ -1,0 +1,81 @@
+{
+  "arquivo": "bl_07.pdf",
+  "tipo": "BL",
+  "layout": "en_chave_valor",
+  "escaneado": true,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "BILL OF LADING\nB/L No.: FSLX9917253150\nShipper: Hamburg Industrietechnik GmbH\nConsignee: Textil Serra Azul Ltda\nPort of Loading: KRPUS - Busan\nPort of Discharge: BRITJ - Itajai\nVessel: SOUTHERN STAR    Voyage: 250W\nShipped on board: 18/05/2026\nContainer AZLU7696512  Seal SL993062  40HC  150 packages  19,500.68 kg\nContainer AZLU3599875  Seal SL193080  20GP  130 packages  16,083.56 kg\nTotal packages: 280\nTotal gross weight: 35,584.24 kg\nMeasurement: 102.82 m3\nDescription of goods: Polyethylene resin\nHS Code: 3901.10.10\nFreight: COLLECT",
+  "campos": {
+    "numero_bl": "FSLX9917253150",
+    "embarcador": "Hamburg Industrietechnik GmbH",
+    "consignatario": "Textil Serra Azul Ltda",
+    "notificar": null,
+    "porto_carregamento": "KRPUS",
+    "porto_descarga": "BRITJ",
+    "navio": "SOUTHERN STAR",
+    "viagem": "250W",
+    "data_embarque": "2026-05-18",
+    "conteineres": [
+      {
+        "numero": "AZLU7696512",
+        "lacre": "SL993062",
+        "tipo": "40HC",
+        "volumes": 150,
+        "peso_bruto_kg": "19500.68"
+      },
+      {
+        "numero": "AZLU3599875",
+        "lacre": "SL193080",
+        "tipo": "20GP",
+        "volumes": 130,
+        "peso_bruto_kg": "16083.56"
+      }
+    ],
+    "volumes_total": 280,
+    "peso_bruto_total_kg": "35584.24",
+    "cubagem_m3": "102.82",
+    "descricao_mercadoria": "Polyethylene resin",
+    "ncm": [
+      "39011010"
+    ],
+    "frete": "COLLECT"
+  },
+  "evidencias": {
+    "numero_bl": "B/L No.: FSLX9917253150",
+    "embarcador": "Shipper: Hamburg Industrietechnik GmbH",
+    "consignatario": "Consignee: Textil Serra Azul Ltda",
+    "notificar": null,
+    "porto_carregamento": "Port of Loading: KRPUS - Busan",
+    "porto_descarga": "Port of Discharge: BRITJ - Itajai",
+    "navio": "Vessel: SOUTHERN STAR    Voyage: 250W",
+    "viagem": "Vessel: SOUTHERN STAR    Voyage: 250W",
+    "data_embarque": "Shipped on board: 18/05/2026",
+    "conteineres": [
+      {
+        "numero": "Container AZLU7696512  Seal SL993062  40HC  150 packages  19,500.68 kg",
+        "lacre": "Container AZLU7696512  Seal SL993062  40HC  150 packages  19,500.68 kg",
+        "tipo": "Container AZLU7696512  Seal SL993062  40HC  150 packages  19,500.68 kg",
+        "volumes": "Container AZLU7696512  Seal SL993062  40HC  150 packages  19,500.68 kg",
+        "peso_bruto_kg": "Container AZLU7696512  Seal SL993062  40HC  150 packages  19,500.68 kg"
+      },
+      {
+        "numero": "Container AZLU3599875  Seal SL193080  20GP  130 packages  16,083.56 kg",
+        "lacre": "Container AZLU3599875  Seal SL193080  20GP  130 packages  16,083.56 kg",
+        "tipo": "Container AZLU3599875  Seal SL193080  20GP  130 packages  16,083.56 kg",
+        "volumes": "Container AZLU3599875  Seal SL193080  20GP  130 packages  16,083.56 kg",
+        "peso_bruto_kg": "Container AZLU3599875  Seal SL193080  20GP  130 packages  16,083.56 kg"
+      }
+    ],
+    "volumes_total": "Total packages: 280",
+    "peso_bruto_total_kg": "Total gross weight: 35,584.24 kg",
+    "cubagem_m3": "Measurement: 102.82 m3",
+    "descricao_mercadoria": "Description of goods: Polyethylene resin",
+    "ncm": [
+      "HS Code: 3901.10.10"
+    ],
+    "frete": "Freight: COLLECT"
+  }
+}

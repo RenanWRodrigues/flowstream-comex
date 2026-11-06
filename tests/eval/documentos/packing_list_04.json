@@ -1,0 +1,73 @@
+{
+  "arquivo": "packing_list_04.pdf",
+  "tipo": "PACKING_LIST",
+  "layout": "en_tabela",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "PACKING LIST\nPacking List Number PL-2026-1548\nCommercial Invoice Ref. INV-2026-3760\nDate of Issue 2026-08-18\nExporter Ningbo Machinery Export Co., Ltd.\nImporter Comercial Atlantico Sul Ltda\nContainer Numbers AZLU7827910, AZLU7713651\nDescription Quantity Packages Net Weight (kg) Gross Weight (kg)\nPolyethylene resin 1166 83 7,893.68 8,367.30\nCeramic tiles 4378 105 4,203.33 4,539.60\nTOTAL PACKAGES 188\nTOTAL NET WEIGHT 12,097.01 kg\nTOTAL GROSS WEIGHT 12,906.90 kg\nTOTAL MEASUREMENT 46.77 m3",
+  "campos": {
+    "numero_packing_list": "PL-2026-1548",
+    "numero_invoice": "INV-2026-3760",
+    "data_emissao": "2026-08-18",
+    "exportador": "Ningbo Machinery Export Co., Ltd.",
+    "importador": "Comercial Atlantico Sul Ltda",
+    "volumes_total": 188,
+    "peso_bruto_total_kg": "12906.90",
+    "peso_liquido_total_kg": "12097.01",
+    "cubagem_m3": "46.77",
+    "conteineres": [
+      "AZLU7827910",
+      "AZLU7713651"
+    ],
+    "itens": [
+      {
+        "descricao": "Polyethylene resin",
+        "quantidade": "1166",
+        "volumes": 83,
+        "peso_liquido_kg": "7893.68",
+        "peso_bruto_kg": "8367.30"
+      },
+      {
+        "descricao": "Ceramic tiles",
+        "quantidade": "4378",
+        "volumes": 105,
+        "peso_liquido_kg": "4203.33",
+        "peso_bruto_kg": "4539.60"
+      }
+    ]
+  },
+  "evidencias": {
+    "numero_packing_list": "Packing List Number PL-2026-1548",
+    "numero_invoice": "Commercial Invoice Ref. INV-2026-3760",
+    "data_emissao": "Date of Issue 2026-08-18",
+    "exportador": "Exporter Ningbo Machinery Export Co., Ltd.",
+    "importador": "Importer Comercial Atlantico Sul Ltda",
+    "volumes_total": "TOTAL PACKAGES 188",
+    "peso_bruto_total_kg": "TOTAL GROSS WEIGHT 12,906.90 kg",
+    "peso_liquido_total_kg": "TOTAL NET WEIGHT 12,097.01 kg",
+    "cubagem_m3": "TOTAL MEASUREMENT 46.77 m3",
+    "conteineres": [
+      "Container Numbers AZLU7827910, AZLU7713651",
+      "Container Numbers AZLU7827910, AZLU7713651"
+    ],
+    "itens": [
+      {
+        "descricao": "Polyethylene resin 1166 83 7,893.68 8,367.30",
+        "quantidade": "Polyethylene resin 1166 83 7,893.68 8,367.30",
+        "volumes": "Polyethylene resin 1166 83 7,893.68 8,367.30",
+        "peso_liquido_kg": "Polyethylene resin 1166 83 7,893.68 8,367.30",
+        "peso_bruto_kg": "Polyethylene resin 1166 83 7,893.68 8,367.30"
+      },
+      {
+        "descricao": "Ceramic tiles 4378 105 4,203.33 4,539.60",
+        "quantidade": "Ceramic tiles 4378 105 4,203.33 4,539.60",
+        "volumes": "Ceramic tiles 4378 105 4,203.33 4,539.60",
+        "peso_liquido_kg": "Ceramic tiles 4378 105 4,203.33 4,539.60",
+        "peso_bruto_kg": "Ceramic tiles 4378 105 4,203.33 4,539.60"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "arquivo": "awb_02.pdf",
+  "tipo": "AWB",
+  "layout": "en_tabela",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "AIR WAYBILL\nAir Waybill Number 074-86389542\nShipper's Name Busan Steel Components Co., Ltd.\nConsignee's Name Quimica Litoral Norte Ltda\nAirport of Departure AMS - Amsterdam\nAirport of Destination VCP - Campinas\nNo. of Pieces Gross Weight (kg) Chargeable Weight (kg)\n59 1,769.77 2,212.21\nNature of Goods Cotton fabric",
+  "campos": {
+    "numero_awb": "074-86389542",
+    "embarcador": "Busan Steel Components Co., Ltd.",
+    "consignatario": "Quimica Litoral Norte Ltda",
+    "aeroporto_origem": "AMS",
+    "aeroporto_destino": "VCP",
+    "voo": null,
+    "data_voo": null,
+    "volumes": 59,
+    "peso_bruto_kg": "1769.77",
+    "peso_taxavel_kg": "2212.21",
+    "descricao_mercadoria": "Cotton fabric"
+  },
+  "evidencias": {
+    "numero_awb": "Air Waybill Number 074-86389542",
+    "embarcador": "Shipper's Name Busan Steel Components Co., Ltd.",
+    "consignatario": "Consignee's Name Quimica Litoral Norte Ltda",
+    "aeroporto_origem": "Airport of Departure AMS - Amsterdam",
+    "aeroporto_destino": "Airport of Destination VCP - Campinas",
+    "voo": null,
+    "data_voo": null,
+    "volumes": "59 1,769.77 2,212.21",
+    "peso_bruto_kg": "59 1,769.77 2,212.21",
+    "peso_taxavel_kg": "59 1,769.77 2,212.21",
+    "descricao_mercadoria": "Nature of Goods Cotton fabric"
+  }
+}

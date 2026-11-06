@@ -1,0 +1,89 @@
+{
+  "arquivo": "invoice_06.pdf",
+  "tipo": "INVOICE",
+  "layout": "en_chave_valor",
+  "escaneado": true,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "COMMERCIAL INVOICE\nInvoice No.: CI-2026-1362\nDate: 25/02/2026\nSeller: Houston Valve Supply LLC\nBuyer: Importadora Exemplo Ltda  CNPJ 00.000.123/0001-22\nIncoterm: CIF Itajai\nCurrency: USD\nItem 1  Cotton fabric  NCM 5208.12.00  3,284 UN  x  USD 18.49  =  USD 60,721.16\nItem 2  Laptop computers  NCM 8471.30.12  4,029 KG  x  USD 89.66  =  USD 361,240.14\nItem 3  Ball bearings  NCM 8482.10.10  228 PCS  x  USD 183.97  =  USD 41,945.16\nTotal: USD 463,906.46",
+  "campos": {
+    "numero_invoice": "CI-2026-1362",
+    "data_emissao": "2026-02-25",
+    "exportador": "Houston Valve Supply LLC",
+    "importador": "Importadora Exemplo Ltda",
+    "importador_cnpj": "00.000.123/0001-22",
+    "incoterm": "CIF",
+    "moeda": "USD",
+    "itens": [
+      {
+        "descricao": "Cotton fabric",
+        "ncm": "52081200",
+        "quantidade": "3284",
+        "unidade": "UN",
+        "valor_unitario": "18.49",
+        "valor_total": "60721.16"
+      },
+      {
+        "descricao": "Laptop computers",
+        "ncm": "84713012",
+        "quantidade": "4029",
+        "unidade": "KG",
+        "valor_unitario": "89.66",
+        "valor_total": "361240.14"
+      },
+      {
+        "descricao": "Ball bearings",
+        "ncm": "84821010",
+        "quantidade": "228",
+        "unidade": "PCS",
+        "valor_unitario": "183.97",
+        "valor_total": "41945.16"
+      }
+    ],
+    "valor_total": "463906.46",
+    "pais_origem": null,
+    "frete": null,
+    "seguro": null
+  },
+  "evidencias": {
+    "numero_invoice": "Invoice No.: CI-2026-1362",
+    "data_emissao": "Date: 25/02/2026",
+    "exportador": "Seller: Houston Valve Supply LLC",
+    "importador": "Buyer: Importadora Exemplo Ltda  CNPJ 00.000.123/0001-22",
+    "importador_cnpj": "Buyer: Importadora Exemplo Ltda  CNPJ 00.000.123/0001-22",
+    "incoterm": "Incoterm: CIF Itajai",
+    "moeda": "Currency: USD",
+    "itens": [
+      {
+        "descricao": "Item 1  Cotton fabric  NCM 5208.12.00  3,284 UN  x  USD 18.49  =  USD 60,721.16",
+        "ncm": "Item 1  Cotton fabric  NCM 5208.12.00  3,284 UN  x  USD 18.49  =  USD 60,721.16",
+        "quantidade": "Item 1  Cotton fabric  NCM 5208.12.00  3,284 UN  x  USD 18.49  =  USD 60,721.16",
+        "unidade": "Item 1  Cotton fabric  NCM 5208.12.00  3,284 UN  x  USD 18.49  =  USD 60,721.16",
+        "valor_unitario": "Item 1  Cotton fabric  NCM 5208.12.00  3,284 UN  x  USD 18.49  =  USD 60,721.16",
+        "valor_total": "Item 1  Cotton fabric  NCM 5208.12.00  3,284 UN  x  USD 18.49  =  USD 60,721.16"
+      },
+      {
+        "descricao": "Item 2  Laptop computers  NCM 8471.30.12  4,029 KG  x  USD 89.66  =  USD 361,240.14",
+        "ncm": "Item 2  Laptop computers  NCM 8471.30.12  4,029 KG  x  USD 89.66  =  USD 361,240.14",
+        "quantidade": "Item 2  Laptop computers  NCM 8471.30.12  4,029 KG  x  USD 89.66  =  USD 361,240.14",
+        "unidade": "Item 2  Laptop computers  NCM 8471.30.12  4,029 KG  x  USD 89.66  =  USD 361,240.14",
+        "valor_unitario": "Item 2  Laptop computers  NCM 8471.30.12  4,029 KG  x  USD 89.66  =  USD 361,240.14",
+        "valor_total": "Item 2  Laptop computers  NCM 8471.30.12  4,029 KG  x  USD 89.66  =  USD 361,240.14"
+      },
+      {
+        "descricao": "Item 3  Ball bearings  NCM 8482.10.10  228 PCS  x  USD 183.97  =  USD 41,945.16",
+        "ncm": "Item 3  Ball bearings  NCM 8482.10.10  228 PCS  x  USD 183.97  =  USD 41,945.16",
+        "quantidade": "Item 3  Ball bearings  NCM 8482.10.10  228 PCS  x  USD 183.97  =  USD 41,945.16",
+        "unidade": "Item 3  Ball bearings  NCM 8482.10.10  228 PCS  x  USD 183.97  =  USD 41,945.16",
+        "valor_unitario": "Item 3  Ball bearings  NCM 8482.10.10  228 PCS  x  USD 183.97  =  USD 41,945.16",
+        "valor_total": "Item 3  Ball bearings  NCM 8482.10.10  228 PCS  x  USD 183.97  =  USD 41,945.16"
+      }
+    ],
+    "valor_total": "Total: USD 463,906.46",
+    "pais_origem": null,
+    "frete": null,
+    "seguro": null
+  }
+}

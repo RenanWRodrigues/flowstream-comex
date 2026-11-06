@@ -1,0 +1,142 @@
+version: 2
+
+# Tabelas do bronze, escritas pela aplicação Python:
+# - fontes públicas (flowstream ingest ...), com freshness;
+# - operação sintética (flowstream synthetic load), carregada sob demanda: sem freshness.
+# Os testes completos ficam nos modelos de staging (_staging.yml); aqui, só as chaves.
+
+sources:
+  - name: bronze
+    description: Dados como chegaram das fontes, com loaded_at. Escritos pela aplicação Python.
+    schema: bronze
+    tables:
+      - name: ptax
+        description: >
+          PTAX de fechamento do Banco Central (R$ por unidade da moeda), só dias úteis.
+          Carga: flowstream ingest ptax (incremental, diária). Ver docs/fontes.md.
+        config:
+          loaded_at_field: loaded_at
+          freshness:
+            # Fins de semana e feriados prolongados não têm cotação.
+            warn_after: {count: 4, period: day}
+            error_after: {count: 7, period: day}
+        columns:
+          - name: moeda
+            description: Código ISO 4217. A API não publica PTAX para CNY.
+            data_tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: [USD, EUR]
+          - name: data_cotacao
+            description: Dia útil da cotação (chave junto com moeda).
+            data_tests: [not_null]
+          - name: cotacao_compra
+            data_tests: [not_null]
+          - name: cotacao_venda
+            description: PTAX de venda, usada para converter valores em moeda estrangeira.
+            data_tests: [not_null]
+          - name: tipo_boletim
+            data_tests:
+              - accepted_values:
+                  arguments:
+                    values: [Fechamento]
+
+      - name: comexstat
+        description: >
+          Exportação e importação de SC por mês, país, posição SH4 e via (marítima e aérea),
+          do Comex Stat/MDIC. Carga: flowstream ingest comexstat (mensal; refaz os 3 últimos
+          meses por causa das revisões). Ver docs/fontes.md.
+        config:
+          loaded_at_field: loaded_at
+          freshness:
+            # O MDIC publica o mês anterior por volta do dia 6; a carga roda mensalmente.
+            warn_after: {count: 35, period: day}
+            error_after: {count: 65, period: day}
+        columns:
+          - name: fluxo
+            data_tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: [EXPORTACAO, IMPORTACAO]
+          - name: mes
+            data_tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                    quote: false
+          - name: via
+            data_tests:
+              - accepted_values:
+                  arguments:
+                    values: [MARITIMA, AEREA]
+          - name: sh4_codigo
+            description: Posição SH4; os 2 primeiros dígitos são o capítulo.
+            data_tests: [not_null]
+          - name: valor_fob_usd
+            data_tests: [not_null]
+          - name: frete_usd
+            description: Frete internacional declarado (US$), só na importação.
+
+      # ---------------------------------------------------------- operação sintética (P03)
+      - name: vendedores
+        description: Vendedores do agente de cargas (fictícios).
+        columns:
+          - name: vendedor_id
+            data_tests: [unique, not_null]
+      - name: clientes
+        description: Clientes importadores e exportadores (fictícios; CNPJ com raiz 00.000.XXX).
+        columns:
+          - name: cliente_id
+            data_tests: [unique, not_null]
+      - name: cotacoes
+        description: Cotações de frete pedidas pelos clientes.
+        columns:
+          - name: cotacao_id
+            data_tests: [unique, not_null]
+      - name: embarques
+        description: Processos de embarque (1 por cotação ganha).
+        columns:
+          - name: processo
+            data_tests: [unique, not_null]
+      - name: equipamentos
+        description: Contêineres e isotanques de cada processo.
+      - name: itens_financeiros
+        description: Receitas e custos por processo, na moeda original.
+        columns:
+          - name: item_id
+            data_tests: [unique, not_null]
+      - name: tracking_eventos
+        description: Eventos de rastreamento dos embarques.
+        columns:
+          - name: evento_id
+            data_tests: [unique, not_null]
+
+  - name: ops
+    description: Operação da plataforma, escrita pela aplicação (execuções e qualidade de dados).
+    schema: ops
+    tables:
+      - name: pipeline_runs
+        description: Uma linha por execução de pipeline (ingestão, carga, qualidade).
+        columns:
+          - name: id
+            data_tests: [unique, not_null]
+      - name: dq_results
+        description: Resultados de testes, modelos e freshness de cada flowstream quality run.
+        columns:
+          - name: id
+            data_tests: [unique, not_null]
+          - name: run_id
+            data_tests:
+              - not_null
+              - relationships:
+                  arguments:
+                    to: source('ops', 'pipeline_runs')
+                    field: id
+      - name: dq_anomalias
+        description: Cargas do dia com desvio maior que 50% da média dos 14 dias anteriores.
+        columns:
+          - name: id
+            data_tests: [unique, not_null]

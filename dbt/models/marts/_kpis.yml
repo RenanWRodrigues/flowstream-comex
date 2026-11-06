@@ -1,0 +1,275 @@
+version: 2
+
+# KPIs (schema ouro, tabelas com contrato imposto), prontos para Power BI, API e alertas.
+
+models:
+  - name: kpi_on_time_armador_mes
+    description: Pontualidade por armador e mês da chegada (ATA <= ETA + 1 dia).
+    config:
+      contract: {enforced: true}
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [armador_codigo, mes]
+    columns:
+      - name: armador_codigo
+        data_type: text
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_parceiro')
+                field: parceiro_id
+      - name: mes
+        data_type: date
+        description: Primeiro dia do mês da ATA.
+        data_tests: [not_null]
+      - name: embarques_chegados
+        data_type: integer
+      - name: embarques_no_prazo
+        data_type: integer
+      - name: pct_on_time
+        data_type: numeric(7,4)
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 1
+      - name: atraso_medio_dias
+        data_type: numeric(8,2)
+      - name: mes_fechado
+        data_type: boolean
+        description: >
+          Falso no mês da data de corte (ainda aberto: chegadas e decisões incompletas).
+          Filtre por ele em tendências e rankings.
+
+  - name: kpi_margem_processo
+    description: Receita, custo e margem em BRL por processo já embarcado.
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: processo
+        data_type: text
+        data_tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fct_embarque')
+                field: processo
+      - name: cliente_id
+        data_type: text
+      - name: modal
+        data_type: text
+      - name: direcao
+        data_type: text
+      - name: data_atd
+        data_type: date
+      - name: receita_brl
+        data_type: numeric(16,2)
+      - name: custo_brl
+        data_type: numeric(16,2)
+      - name: margem_brl
+        data_type: numeric(16,2)
+      - name: margem_pct
+        data_type: numeric(7,4)
+        description: >
+          Margem / receita, em fração (0,15 = 15%). Pode ser negativa quando o agente
+          absorve demurrage.
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: -1
+                max_value: 0.5
+      - name: teve_demurrage
+        data_type: boolean
+      - name: demurrage_absorvida
+        data_type: boolean
+        description: Custo de demurrage sem receita correspondente (o agente pagou).
+
+  - name: kpi_demurrage_risco
+    description: >
+      Dias livres restantes por contêiner de importação já chegado, na data de referência
+      (macro data_de_corte: var data_referencia ou o dia do último evento de tracking).
+      Em aberto = chegou e ainda não tem o evento DEVOLUCAO_VAZIO até a data de corte.
+    config:
+      contract: {enforced: true}
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [processo, container_numero]
+    columns:
+      - name: processo
+        data_type: text
+        data_tests: [not_null]
+      - name: container_numero
+        data_type: text
+        data_tests: [not_null]
+      - name: tipo
+        data_type: text
+      - name: cliente_id
+        data_type: text
+      - name: armador_codigo
+        data_type: text
+      - name: destino
+        data_type: text
+      - name: data_ata
+        data_type: date
+      - name: free_time_dias
+        data_type: integer
+      - name: data_referencia
+        data_type: date
+      - name: dias_desde_ata
+        data_type: integer
+      - name: dias_livres_restantes
+        data_type: integer
+        description: Free time - dias desde a ATA (negativo = já em demurrage).
+      - name: faixa_risco
+        data_type: text
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [VENCIDO, CRITICO, ATENCAO, OK]
+
+  - name: kpi_win_rate_vendedor_mes
+    description: Taxa de ganho por vendedor e mês da solicitação (ganhas / decididas).
+    config:
+      contract: {enforced: true}
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [vendedor_id, mes]
+    columns:
+      - name: vendedor_id
+        data_type: text
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_vendedor')
+                field: vendedor_id
+      - name: mes
+        data_type: date
+      - name: cotacoes
+        data_type: integer
+      - name: cotacoes_decididas
+        data_type: integer
+        description: Ganhas + perdidas + expiradas (exclui as em aberto).
+      - name: cotacoes_ganhas
+        data_type: integer
+      - name: win_rate
+        data_type: numeric(7,4)
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 1
+      - name: mes_fechado
+        data_type: boolean
+        description: >
+          Falso no mês da data de corte (ainda aberto: chegadas e decisões incompletas).
+          Filtre por ele em tendências e rankings.
+
+  - name: kpi_tempo_resposta_cotacao
+    description: Tempo de resposta das cotações por modal e mês da solicitação, em horas.
+    config:
+      contract: {enforced: true}
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [modal, mes]
+    columns:
+      - name: modal
+        data_type: text
+      - name: mes
+        data_type: date
+      - name: cotacoes
+        data_type: integer
+      - name: tempo_medio_horas
+        data_type: numeric(10,2)
+      - name: tempo_mediano_horas
+        data_type: numeric(10,2)
+      - name: tempo_p90_horas
+        data_type: numeric(10,2)
+      - name: pct_respondidas_24h
+        data_type: numeric(7,4)
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 1
+      - name: mes_fechado
+        data_type: boolean
+        description: >
+          Falso no mês da data de corte (ainda aberto: chegadas e decisões incompletas).
+          Filtre por ele em tendências e rankings.
+
+  - name: kpi_mercado_sc
+    description: >
+      Comércio exterior de SC (Comex Stat) por fluxo, mês, país e capítulo SH2, com a
+      participação no total do fluxo no mês.
+    config:
+      contract: {enforced: true}
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [fluxo, mes_referencia, pais, sh2_codigo]
+    columns:
+      - name: fluxo
+        data_type: text
+      - name: mes_referencia
+        data_type: date
+      - name: pais
+        data_type: text
+      - name: sh2_codigo
+        data_type: text
+      - name: valor_fob_usd
+        data_type: numeric(18,2)
+      - name: peso_kg
+        data_type: numeric(18,2)
+      - name: frete_usd
+        data_type: numeric(18,2)
+      - name: participacao_pct
+        data_type: numeric(9,6)
+
+  - name: kpi_saude_dados
+    description: >
+      Saúde dos dados por dia: testes dbt, erros de execução, fontes atrasadas e anomalias de
+      volume da última flowstream quality run do dia. Página "Saúde dos dados" do Power BI e
+      gatilho do alerta dados_com_problema (P13).
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: data
+        data_type: date
+        data_tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_data')
+                field: data
+      - name: run_id
+        data_type: bigint
+        description: Execução em ops.pipeline_runs (pipeline quality_run).
+      - name: testes_ok
+        data_type: integer
+      - name: testes_aviso
+        data_type: integer
+      - name: testes_falha
+        data_type: integer
+      - name: recursos_com_erro
+        data_type: integer
+        description: Modelos, seeds ou snapshots com erro, ou o próprio dbt falhando.
+      - name: fontes_atrasadas
+        data_type: integer
+        description: Fontes com freshness em aviso ou erro.
+      - name: anomalias
+        data_type: integer
+        description: Tabelas do bronze com carga do dia fora de ±50% da média de 14 dias.
+      - name: pct_testes_ok
+        data_type: numeric(7,4)
+        description: Fração de testes aprovados (0,99 = 99%).
+      - name: saudavel
+        data_type: boolean
+        description: Nenhum teste falhando e nenhum erro de execução.

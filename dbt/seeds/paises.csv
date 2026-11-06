@@ -1,0 +1,28 @@
+iso2,nome,regiao
+BR,Brasil,AMERICA_DO_SUL
+AR,Argentina,AMERICA_DO_SUL
+UY,Uruguai,AMERICA_DO_SUL
+PY,Paraguai,AMERICA_DO_SUL
+CL,Chile,AMERICA_DO_SUL
+PE,Peru,AMERICA_DO_SUL
+CO,Colômbia,AMERICA_DO_SUL
+US,Estados Unidos,AMERICA_DO_NORTE
+MX,México,AMERICA_DO_NORTE
+CN,China,ASIA
+HK,Hong Kong,ASIA
+SG,Singapura,ASIA
+KR,Coreia do Sul,ASIA
+JP,Japão,ASIA
+TW,Taiwan,ASIA
+VN,Vietnã,ASIA
+IN,Índia,ASIA
+AE,Emirados Árabes Unidos,ORIENTE_MEDIO
+QA,Catar,ORIENTE_MEDIO
+DE,Alemanha,EUROPA
+NL,Países Baixos,EUROPA
+BE,Bélgica,EUROPA
+ES,Espanha,EUROPA
+IT,Itália,EUROPA
+FR,França,EUROPA
+GB,Reino Unido,EUROPA
+PT,Portugal,EUROPA

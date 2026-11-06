@@ -1,0 +1,39 @@
+# Hooks do pre-commit. Faça commits com o .venv ativo: ruff, mypy e pytest rodam
+# com as versões instaladas no projeto (language: system), iguais às do make lint.
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-yaml
+      - id: check-json
+      - id: end-of-file-fixer
+        exclude: ^Prompts\.md$
+      - id: detect-private-key
+
+  - repo: local
+    hooks:
+      - id: ruff
+        name: ruff (lint)
+        entry: python -m ruff check --no-cache --fix
+        language: system
+        types: [python]
+
+      - id: ruff-format
+        name: ruff (formatação)
+        entry: python -m ruff format
+        language: system
+        types: [python]
+
+      - id: mypy
+        name: mypy (estrito em src/)
+        entry: python -m mypy src
+        language: system
+        types: [python]
+        pass_filenames: false
+
+      - id: pytest
+        name: pytest (unitários)
+        entry: python -m pytest -q -m "not integration"
+        language: system
+        types: [python]
+        pass_filenames: false

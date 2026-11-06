@@ -1,0 +1,122 @@
+{
+  "metadata": {
+    "dbt_schema_version": "https://schemas.getdbt.com/dbt/run-results/v6.json",
+    "dbt_version": "1.12.6",
+    "generated_at": "2026-11-03T13:52:45.691240Z"
+  },
+  "results": [
+    {
+      "status": "success",
+      "thread_id": "Thread-2 (worker)",
+      "execution_time": 0.7231748104095459,
+      "adapter_response": {
+        "_message": "CREATE VIEW",
+        "rows_affected": -1
+      },
+      "message": "CREATE VIEW",
+      "failures": null,
+      "unique_id": "model.flowstream.stg_equipamentos",
+      "compiled": true,
+      "relation_name": "\"flowstream\".\"prata\".\"stg_equipamentos\"",
+      "batch_results": null,
+      "overload_results": null
+    },
+    {
+      "status": "success",
+      "thread_id": "Thread-2 (worker)",
+      "execution_time": 0.37938594818115234,
+      "adapter_response": {
+        "_message": "INSERT 26",
+        "rows_affected": 26
+      },
+      "message": "INSERT 26",
+      "failures": null,
+      "unique_id": "seed.flowstream.aeroportos",
+      "compiled": null,
+      "relation_name": null,
+      "batch_results": null,
+      "overload_results": null
+    },
+    {
+      "status": "pass",
+      "thread_id": "Thread-1 (worker)",
+      "execution_time": 1.6065888404846191,
+      "adapter_response": {
+        "_message": "SELECT 1",
+        "rows_affected": 1
+      },
+      "message": null,
+      "failures": 0,
+      "unique_id": "test.flowstream.source_accepted_values_bronze_comexstat_fluxo__EXPORTACAO__IMPORTACAO.f57960d3e5",
+      "compiled": true,
+      "relation_name": null,
+      "batch_results": null,
+      "overload_results": null
+    },
+    {
+      "status": "pass",
+      "thread_id": "Thread-2 (worker)",
+      "execution_time": 1.3453099727630615,
+      "adapter_response": {
+        "_message": "SELECT 1",
+        "rows_affected": 1
+      },
+      "message": null,
+      "failures": 0,
+      "unique_id": "test.flowstream.source_accepted_values_bronze_comexstat_mes__False__1__2__3__4__5__6__7__8__9__10__11__12.82aa756a4e",
+      "compiled": true,
+      "relation_name": null,
+      "batch_results": null,
+      "overload_results": null
+    },
+    {
+      "status": "pass",
+      "thread_id": "Thread-2 (worker)",
+      "execution_time": 0.2259378433227539,
+      "adapter_response": {
+        "_message": "SELECT 1",
+        "rows_affected": 1
+      },
+      "message": null,
+      "failures": 0,
+      "unique_id": "test.flowstream.source_accepted_values_bronze_ptax_moeda__USD__EUR.15be3657ac",
+      "compiled": true,
+      "relation_name": null,
+      "batch_results": null,
+      "overload_results": null
+    },
+    {
+      "status": "success",
+      "thread_id": "Thread-1 (worker)",
+      "execution_time": 0.8032865524291992,
+      "adapter_response": {
+        "_message": "INSERT 0 0",
+        "rows_affected": 0
+      },
+      "message": "INSERT 0 0",
+      "failures": null,
+      "unique_id": "snapshot.flowstream.snap_clientes",
+      "compiled": true,
+      "relation_name": "\"flowstream\".\"prata\".\"snap_clientes\"",
+      "batch_results": null,
+      "overload_results": null
+    },
+    {
+      "status": "no-op",
+      "thread_id": "Thread-1 (worker)",
+      "execution_time": 0.014184236526489258,
+      "adapter_response": {},
+      "message": "NO-OP",
+      "failures": 0,
+      "unique_id": "exposure.flowstream.alertas_n8n",
+      "compiled": null,
+      "relation_name": null,
+      "batch_results": null,
+      "overload_results": null
+    }
+  ],
+  "elapsed_time": 89.50001645088196,
+  "args": {
+    "which": "build"
+  }
+}

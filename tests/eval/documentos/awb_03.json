@@ -1,0 +1,37 @@
+{
+  "arquivo": "awb_03.pdf",
+  "tipo": "AWB",
+  "layout": "en_chave_valor",
+  "escaneado": true,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "AIR WAYBILL\nAWB No.: 074-80956164\nShipper: Ningbo Machinery Export Co., Ltd.\nConsignee: Metalurgica Vale Verde Ltda\nAirport of Departure: AMS\nAirport of Destination: VCP\nFlight: KL 8734 / 27/01/2026\nNo. of pieces: 17\nGross weight: 2,353.95 kg\nNature of goods: Laptop computers",
+  "campos": {
+    "numero_awb": "074-80956164",
+    "embarcador": "Ningbo Machinery Export Co., Ltd.",
+    "consignatario": "Metalurgica Vale Verde Ltda",
+    "aeroporto_origem": "AMS",
+    "aeroporto_destino": "VCP",
+    "voo": "KL 8734",
+    "data_voo": "2026-01-27",
+    "volumes": 17,
+    "peso_bruto_kg": "2353.95",
+    "peso_taxavel_kg": null,
+    "descricao_mercadoria": "Laptop computers"
+  },
+  "evidencias": {
+    "numero_awb": "AWB No.: 074-80956164",
+    "embarcador": "Shipper: Ningbo Machinery Export Co., Ltd.",
+    "consignatario": "Consignee: Metalurgica Vale Verde Ltda",
+    "aeroporto_origem": "Airport of Departure: AMS",
+    "aeroporto_destino": "Airport of Destination: VCP",
+    "voo": "Flight: KL 8734 / 27/01/2026",
+    "data_voo": "Flight: KL 8734 / 27/01/2026",
+    "volumes": "No. of pieces: 17",
+    "peso_bruto_kg": "Gross weight: 2,353.95 kg",
+    "peso_taxavel_kg": null,
+    "descricao_mercadoria": "Nature of goods: Laptop computers"
+  }
+}

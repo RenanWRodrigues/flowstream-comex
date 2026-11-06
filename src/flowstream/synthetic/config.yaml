@@ -1,0 +1,105 @@
+# Gerador de dados sintéticos do FlowStream-Comex: todos os volumes e proporções.
+# Proporções (blocos com valores entre 0 e 1) precisam somar 1.
+# Plano aprovado no P03; mudar um número aqui muda os dados, não o código.
+
+inicio: 2024-11-01          # primeiro dia do período (fixo: mesma semente, mesmos dados)
+meses: 24
+crescimento_anual: 0.08     # tendência de volume ano a ano
+
+vendedores: 8
+clientes: 300
+cotacoes: 6000
+taxa_ganho: 0.30            # cotações ganhas viram embarques (1 para 1)
+proporcao_perdida: 0.55     # do total de cotações
+proporcao_expirada: 0.10    # as do último mês ficam EM_ABERTO
+proporcao_importacao: 0.65
+
+modais:
+  FCL: 0.45
+  LCL: 0.25
+  AEREO: 0.18
+  RODOVIARIO: 0.07
+  ISOTANQUE: 0.03
+  PROJETO: 0.02
+
+# Peso de cada região estrangeira na escolha da rota.
+regioes:
+  ASIA: 0.60
+  EUROPA: 0.20
+  ORIENTE_MEDIO: 0.02
+  AMERICA_DO_NORTE: 0.12
+  AMERICA_DO_SUL: 0.06
+
+# Peso do mês da cotação: pico de agosto a outubro (carga de Natal saindo da Ásia).
+sazonalidade:
+  1: 0.95
+  2: 0.85
+  3: 0.90
+  4: 1.00
+  5: 1.00
+  6: 1.00
+  7: 1.05
+  8: 1.15
+  9: 1.20
+  10: 1.20
+  11: 1.05
+  12: 0.85
+
+# Embarques com origem na Ásia e ETD de 7 dias antes a 14 dias depois caem 60%.
+ano_novo_chines: [2025-01-29, 2026-02-17]
+reducao_ano_novo_chines: 0.60
+
+segmentos:
+  TEXTIL: 0.14
+  METALMECANICO: 0.13
+  ALIMENTOS: 0.12
+  VAREJO: 0.12
+  ELETRONICOS: 0.09
+  AUTOPECAS: 0.09
+  MOVEIS: 0.09
+  CERAMICA: 0.08
+  QUIMICO: 0.07
+  AGRO: 0.07
+
+porte:
+  PEQUENO: 0.50
+  MEDIO: 0.35
+  GRANDE: 0.15
+
+# Quantas vezes mais cotações um cliente pede, conforme o porte, multiplicado por uma
+# lognormal por cliente (dispersao_cliente = sigma). Resultado: ~20% dos clientes trazem
+# ~70% dos embarques (Pareto), como num agente de cargas real. Ajustado após a auditoria.
+peso_porte:
+  PEQUENO: 1
+  MEDIO: 4
+  GRANDE: 25
+dispersao_cliente: 0.6
+
+uf:
+  SC: 0.70
+  SP: 0.10
+  PR: 0.12
+  RS: 0.08
+
+taxa_ganho_vendedor: {minimo: 0.22, maximo: 0.38}
+
+motivos_perda:
+  PRECO: 0.50
+  PRAZO: 0.15
+  SEM_RESPOSTA_CLIENTE: 0.15
+  RELACIONAMENTO_CONCORRENTE: 0.10
+  DESISTENCIA: 0.10
+
+# Pontualidade (ATA <= ETA + 1 dia): varia por armador; aéreo e rodoviário fixos.
+pontualidade_armador: {minimo: 0.72, maximo: 0.90}
+pontualidade_outros: 0.85
+queda_pontualidade_pico: 0.05
+meses_pico: [8, 9, 10]
+
+margem: {minima: 0.08, moda: 0.15, maxima: 0.25}
+
+demurrage:
+  taxa_fcl: 0.08            # dos FCL de importação que já chegaram (só o importador paga)
+  taxa_absorvida: 0.30      # o agente paga e não repassa ao cliente
+  dias: {minimo: 3, maximo: 20}
+  diaria_usd: {minimo: 80, maximo: 150}   # por contêiner

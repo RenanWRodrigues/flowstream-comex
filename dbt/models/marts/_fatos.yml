@@ -1,0 +1,296 @@
+version: 2
+
+# Fatos (schema ouro, tabelas com contrato imposto). Datas apontam para dim_data; o cliente
+# aponta para a versão (dim_cliente.cliente_sk) vigente na data do fato.
+
+x-data-existe: &data_existe
+  - relationships:
+      arguments:
+        to: ref('dim_data')
+        field: data
+x-cliente-existe: &cliente_existe
+  - not_null
+  - relationships:
+      arguments:
+        to: ref('dim_cliente')
+        field: cliente_sk
+x-vendedor-existe: &vendedor_existe
+  - not_null
+  - relationships:
+      arguments:
+        to: ref('dim_vendedor')
+        field: vendedor_id
+x-rota-existe: &rota_existe
+  - not_null
+  - relationships:
+      arguments:
+        to: ref('dim_rota')
+        field: rota_codigo
+x-modal-existe: &modal_existe
+  - not_null
+  - relationships:
+      arguments:
+        to: ref('dim_modal')
+        field: modal
+x-local-existe: &local_existe
+  - relationships:
+      arguments:
+        to: ref('dim_porto')
+        field: local_codigo
+x-embarque-existe: &embarque_existe
+  - not_null
+  - relationships:
+      arguments:
+        to: ref('fct_embarque')
+        field: processo
+
+models:
+  - name: fct_embarque
+    description: Grão - 1 linha por processo de embarque, com prazos e resultado financeiro em BRL.
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: processo
+        data_type: text
+        data_tests: [unique, not_null]
+      - name: cotacao_id
+        data_type: text
+        data_tests: [unique, not_null]
+      - name: cliente_sk
+        data_type: text
+        description: Versão do cliente vigente no booking.
+        data_tests: *cliente_existe
+      - name: cliente_id
+        data_type: text
+      - name: vendedor_id
+        data_type: text
+        data_tests: *vendedor_existe
+      - name: rota_codigo
+        data_type: text
+        data_tests: *rota_existe
+      - name: modal
+        data_type: text
+        data_tests: *modal_existe
+      - name: direcao
+        data_type: text
+      - name: parceiro_id
+        data_type: text
+        description: Armador (marítimo) ou companhia aérea (aéreo); nulo no rodoviário.
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_parceiro')
+                field: parceiro_id
+      - name: armador_codigo
+        data_type: text
+      - name: cia_aerea_prefixo
+        data_type: text
+      - name: origem
+        data_type: text
+        data_tests: *local_existe
+      - name: destino
+        data_type: text
+        data_tests: *local_existe
+      - name: status
+        data_type: text
+      - name: data_booking
+        data_type: date
+        data_tests: *data_existe
+      - name: data_etd
+        data_type: date
+        data_tests: *data_existe
+      - name: data_eta
+        data_type: date
+        data_tests: *data_existe
+      - name: data_atd
+        data_type: date
+        data_tests: *data_existe
+      - name: data_ata
+        data_type: date
+        data_tests: *data_existe
+      - name: booking_em
+        data_type: timestamp with time zone
+      - name: etd
+        data_type: timestamp with time zone
+      - name: eta
+        data_type: timestamp with time zone
+      - name: atd
+        data_type: timestamp with time zone
+      - name: ata
+        data_type: timestamp with time zone
+      - name: quantidade_equipamentos
+        data_type: integer
+      - name: teus
+        data_type: integer
+      - name: peso_kg
+        data_type: numeric(14,2)
+      - name: volume_m3
+        data_type: numeric(12,2)
+      - name: peso_taxavel_kg
+        data_type: numeric(14,2)
+      - name: transit_previsto_dias
+        data_type: numeric(8,2)
+      - name: transit_real_dias
+        data_type: numeric(8,2)
+      - name: atraso_saida_dias
+        data_type: numeric(8,2)
+      - name: atraso_chegada_dias
+        data_type: numeric(8,2)
+      - name: chegou_no_prazo
+        data_type: boolean
+        description: ATA <= ETA + 1 dia; nulo se ainda não chegou.
+      - name: dias_uteis_booking_etd
+        data_type: integer
+      - name: receita_brl
+        data_type: numeric(16,2)
+      - name: custo_brl
+        data_type: numeric(16,2)
+      - name: margem_brl
+        data_type: numeric(16,2)
+
+  - name: fct_financeiro
+    description: Grão - 1 linha por item financeiro (receita ou custo), com valor em BRL.
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: item_id
+        data_type: text
+        data_tests: [unique, not_null]
+      - name: processo
+        data_type: text
+        data_tests: *embarque_existe
+      - name: cliente_sk
+        data_type: text
+        data_tests: *cliente_existe
+      - name: cliente_id
+        data_type: text
+      - name: tipo
+        data_type: text
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [RECEITA, CUSTO]
+      - name: categoria
+        data_type: text
+      - name: moeda
+        data_type: text
+      - name: data_competencia
+        data_type: date
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_data')
+                field: data
+      - name: valor_original
+        data_type: numeric(16,2)
+      - name: taxa_cambio
+        data_type: numeric(12,6)
+      - name: valor_brl
+        data_type: numeric(16,2)
+        data_tests: [not_null]
+      - name: valor_brl_assinado
+        data_type: numeric(16,2)
+        description: Receita positiva, custo negativo.
+
+  - name: fct_cotacao
+    description: Grão - 1 linha por cotação.
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: cotacao_id
+        data_type: text
+        data_tests: [unique, not_null]
+      - name: cliente_sk
+        data_type: text
+        description: Versão do cliente vigente na solicitação.
+        data_tests: *cliente_existe
+      - name: cliente_id
+        data_type: text
+      - name: vendedor_id
+        data_type: text
+        data_tests: *vendedor_existe
+      - name: rota_codigo
+        data_type: text
+        data_tests: *rota_existe
+      - name: modal
+        data_type: text
+        data_tests: *modal_existe
+      - name: direcao
+        data_type: text
+      - name: data_solicitacao
+        data_type: date
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_data')
+                field: data
+      - name: solicitada_em
+        data_type: timestamp with time zone
+      - name: respondida_em
+        data_type: timestamp with time zone
+      - name: tempo_resposta_horas
+        data_type: numeric(10,2)
+      - name: valor_frete
+        data_type: numeric(16,2)
+      - name: moeda
+        data_type: text
+      - name: valor_frete_brl
+        data_type: numeric(16,2)
+        description: Valor cotado convertido pela PTAX do dia da solicitação.
+        data_tests: [not_null]
+      - name: quantidade_equipamentos
+        data_type: integer
+      - name: peso_kg
+        data_type: numeric(14,2)
+      - name: volume_m3
+        data_type: numeric(12,2)
+      - name: status
+        data_type: text
+      - name: ganha
+        data_type: boolean
+      - name: motivo_perda
+        data_type: text
+      - name: processo
+        data_type: text
+        description: Processo gerado, quando a cotação foi ganha.
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('fct_embarque')
+                field: processo
+
+  - name: fct_tracking_evento
+    description: Grão - 1 linha por evento de rastreamento.
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: evento_id
+        data_type: text
+        data_tests: [unique, not_null]
+      - name: processo
+        data_type: text
+        data_tests: *embarque_existe
+      - name: tipo
+        data_type: text
+      - name: data_evento
+        data_type: date
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_data')
+                field: data
+      - name: ocorrido_em
+        data_type: timestamp with time zone
+      - name: local_codigo
+        data_type: text
+        data_tests: *local_existe
+      - name: eta_original
+        data_type: timestamp with time zone
+      - name: eta_informada
+        data_type: timestamp with time zone
+      - name: variacao_eta_horas
+        data_type: numeric(10,2)
+        description: ETA informado no evento menos o ETA original (só em ETA_ATUALIZADO).

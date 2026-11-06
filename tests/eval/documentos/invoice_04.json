@@ -1,0 +1,57 @@
+{
+  "arquivo": "invoice_04.pdf",
+  "tipo": "INVOICE",
+  "layout": "en_chave_valor",
+  "escaneado": false,
+  "erro_proposital": "total da invoice diferente da soma dos itens",
+  "regra_esperada": "COERENCIA",
+  "injecao": false,
+  "decisao_esperada": "REVISAO",
+  "texto": "COMMERCIAL INVOICE\nInvoice No.: CI-2026-5066\nDate: 20/01/2026\nSeller: Milano Tessuti S.r.l.\nBuyer: Quimica Litoral Norte Ltda  CNPJ 00.000.357/0001-70\nIncoterm: FCA Rotterdam\nCurrency: CNY\nItem 1  Polyethylene resin  NCM 3901.10.10  2,505 PCS  x  CNY 65.39  =  CNY 163,801.95\nTotal: CNY 163,901.95\nCountry of origin: Italy",
+  "campos": {
+    "numero_invoice": "CI-2026-5066",
+    "data_emissao": "2026-01-20",
+    "exportador": "Milano Tessuti S.r.l.",
+    "importador": "Quimica Litoral Norte Ltda",
+    "importador_cnpj": "00.000.357/0001-70",
+    "incoterm": "FCA",
+    "moeda": "CNY",
+    "itens": [
+      {
+        "descricao": "Polyethylene resin",
+        "ncm": "39011010",
+        "quantidade": "2505",
+        "unidade": "PCS",
+        "valor_unitario": "65.39",
+        "valor_total": "163801.95"
+      }
+    ],
+    "valor_total": "163901.95",
+    "pais_origem": "Italy",
+    "frete": null,
+    "seguro": null
+  },
+  "evidencias": {
+    "numero_invoice": "Invoice No.: CI-2026-5066",
+    "data_emissao": "Date: 20/01/2026",
+    "exportador": "Seller: Milano Tessuti S.r.l.",
+    "importador": "Buyer: Quimica Litoral Norte Ltda  CNPJ 00.000.357/0001-70",
+    "importador_cnpj": "Buyer: Quimica Litoral Norte Ltda  CNPJ 00.000.357/0001-70",
+    "incoterm": "Incoterm: FCA Rotterdam",
+    "moeda": "Currency: CNY",
+    "itens": [
+      {
+        "descricao": "Item 1  Polyethylene resin  NCM 3901.10.10  2,505 PCS  x  CNY 65.39  =  CNY 163,801.95",
+        "ncm": "Item 1  Polyethylene resin  NCM 3901.10.10  2,505 PCS  x  CNY 65.39  =  CNY 163,801.95",
+        "quantidade": "Item 1  Polyethylene resin  NCM 3901.10.10  2,505 PCS  x  CNY 65.39  =  CNY 163,801.95",
+        "unidade": "Item 1  Polyethylene resin  NCM 3901.10.10  2,505 PCS  x  CNY 65.39  =  CNY 163,801.95",
+        "valor_unitario": "Item 1  Polyethylene resin  NCM 3901.10.10  2,505 PCS  x  CNY 65.39  =  CNY 163,801.95",
+        "valor_total": "Item 1  Polyethylene resin  NCM 3901.10.10  2,505 PCS  x  CNY 65.39  =  CNY 163,801.95"
+      }
+    ],
+    "valor_total": "Total: CNY 163,901.95",
+    "pais_origem": "Country of origin: Italy",
+    "frete": null,
+    "seguro": null
+  }
+}

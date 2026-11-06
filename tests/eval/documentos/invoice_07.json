@@ -1,0 +1,89 @@
+{
+  "arquivo": "invoice_07.pdf",
+  "tipo": "INVOICE",
+  "layout": "pt_chave_valor",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "FATURA COMERCIAL (COMMERCIAL INVOICE)\nNúmero da fatura: INV-2026-9313\nData de emissão: 25/07/2026\nExportador: Ningbo Machinery Export Co., Ltd.\nImportador: Metalurgica Vale Verde Ltda\nCNPJ do importador: 00.000.789/0001-80\nIncoterm: CIF Santos\nMoeda: USD\nItem 1  Resina de polietileno  NCM 3901.10.10  833 KG  x  78,60  =  65.473,80\nItem 2  Instrumentos de medição  NCM 9031.80.99  3.804 KG  x  238,92  =  908.851,68\nItem 3  Revestimento cerâmico  NCM 6907.21.00  1.748 KG  x  172,61  =  301.722,28\nValor total: USD 1.276.047,76\nPaís de origem: China",
+  "campos": {
+    "numero_invoice": "INV-2026-9313",
+    "data_emissao": "2026-07-25",
+    "exportador": "Ningbo Machinery Export Co., Ltd.",
+    "importador": "Metalurgica Vale Verde Ltda",
+    "importador_cnpj": "00.000.789/0001-80",
+    "incoterm": "CIF",
+    "moeda": "USD",
+    "itens": [
+      {
+        "descricao": "Resina de polietileno",
+        "ncm": "39011010",
+        "quantidade": "833",
+        "unidade": "KG",
+        "valor_unitario": "78.6",
+        "valor_total": "65473.80"
+      },
+      {
+        "descricao": "Instrumentos de medição",
+        "ncm": "90318099",
+        "quantidade": "3804",
+        "unidade": "KG",
+        "valor_unitario": "238.92",
+        "valor_total": "908851.68"
+      },
+      {
+        "descricao": "Revestimento cerâmico",
+        "ncm": "69072100",
+        "quantidade": "1748",
+        "unidade": "KG",
+        "valor_unitario": "172.61",
+        "valor_total": "301722.28"
+      }
+    ],
+    "valor_total": "1276047.76",
+    "pais_origem": "China",
+    "frete": null,
+    "seguro": null
+  },
+  "evidencias": {
+    "numero_invoice": "Número da fatura: INV-2026-9313",
+    "data_emissao": "Data de emissão: 25/07/2026",
+    "exportador": "Exportador: Ningbo Machinery Export Co., Ltd.",
+    "importador": "Importador: Metalurgica Vale Verde Ltda",
+    "importador_cnpj": "CNPJ do importador: 00.000.789/0001-80",
+    "incoterm": "Incoterm: CIF Santos",
+    "moeda": "Moeda: USD",
+    "itens": [
+      {
+        "descricao": "Item 1  Resina de polietileno  NCM 3901.10.10  833 KG  x  78,60  =  65.473,80",
+        "ncm": "Item 1  Resina de polietileno  NCM 3901.10.10  833 KG  x  78,60  =  65.473,80",
+        "quantidade": "Item 1  Resina de polietileno  NCM 3901.10.10  833 KG  x  78,60  =  65.473,80",
+        "unidade": "Item 1  Resina de polietileno  NCM 3901.10.10  833 KG  x  78,60  =  65.473,80",
+        "valor_unitario": "Item 1  Resina de polietileno  NCM 3901.10.10  833 KG  x  78,60  =  65.473,80",
+        "valor_total": "Item 1  Resina de polietileno  NCM 3901.10.10  833 KG  x  78,60  =  65.473,80"
+      },
+      {
+        "descricao": "Item 2  Instrumentos de medição  NCM 9031.80.99  3.804 KG  x  238,92  =  908.851,68",
+        "ncm": "Item 2  Instrumentos de medição  NCM 9031.80.99  3.804 KG  x  238,92  =  908.851,68",
+        "quantidade": "Item 2  Instrumentos de medição  NCM 9031.80.99  3.804 KG  x  238,92  =  908.851,68",
+        "unidade": "Item 2  Instrumentos de medição  NCM 9031.80.99  3.804 KG  x  238,92  =  908.851,68",
+        "valor_unitario": "Item 2  Instrumentos de medição  NCM 9031.80.99  3.804 KG  x  238,92  =  908.851,68",
+        "valor_total": "Item 2  Instrumentos de medição  NCM 9031.80.99  3.804 KG  x  238,92  =  908.851,68"
+      },
+      {
+        "descricao": "Item 3  Revestimento cerâmico  NCM 6907.21.00  1.748 KG  x  172,61  =  301.722,28",
+        "ncm": "Item 3  Revestimento cerâmico  NCM 6907.21.00  1.748 KG  x  172,61  =  301.722,28",
+        "quantidade": "Item 3  Revestimento cerâmico  NCM 6907.21.00  1.748 KG  x  172,61  =  301.722,28",
+        "unidade": "Item 3  Revestimento cerâmico  NCM 6907.21.00  1.748 KG  x  172,61  =  301.722,28",
+        "valor_unitario": "Item 3  Revestimento cerâmico  NCM 6907.21.00  1.748 KG  x  172,61  =  301.722,28",
+        "valor_total": "Item 3  Revestimento cerâmico  NCM 6907.21.00  1.748 KG  x  172,61  =  301.722,28"
+      }
+    ],
+    "valor_total": "Valor total: USD 1.276.047,76",
+    "pais_origem": "País de origem: China",
+    "frete": null,
+    "seguro": null
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "arquivo": "packing_list_05.pdf",
+  "tipo": "PACKING_LIST",
+  "layout": "en_tabela",
+  "escaneado": true,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "PACKING LIST\nPacking List Number PL-2026-6476\nCommercial Invoice Ref. INV-2026-2548\nDate of Issue 2026-06-16\nExporter Shanghai Polymer Trading Co., Ltd.\nImporter Comercial Atlantico Sul Ltda\nContainer Numbers STRU7917190\nDescription Quantity Packages Net Weight (kg) Gross Weight (kg)\nLaptop computers 4648 24 6,643.44 7,108.48\nTOTAL PACKAGES 24\nTOTAL NET WEIGHT 6,643.44 kg\nTOTAL GROSS WEIGHT 7,108.48 kg\nTOTAL MEASUREMENT 25.52 m3",
+  "campos": {
+    "numero_packing_list": "PL-2026-6476",
+    "numero_invoice": "INV-2026-2548",
+    "data_emissao": "2026-06-16",
+    "exportador": "Shanghai Polymer Trading Co., Ltd.",
+    "importador": "Comercial Atlantico Sul Ltda",
+    "volumes_total": 24,
+    "peso_bruto_total_kg": "7108.48",
+    "peso_liquido_total_kg": "6643.44",
+    "cubagem_m3": "25.52",
+    "conteineres": [
+      "STRU7917190"
+    ],
+    "itens": [
+      {
+        "descricao": "Laptop computers",
+        "quantidade": "4648",
+        "volumes": 24,
+        "peso_liquido_kg": "6643.44",
+        "peso_bruto_kg": "7108.48"
+      }
+    ]
+  },
+  "evidencias": {
+    "numero_packing_list": "Packing List Number PL-2026-6476",
+    "numero_invoice": "Commercial Invoice Ref. INV-2026-2548",
+    "data_emissao": "Date of Issue 2026-06-16",
+    "exportador": "Exporter Shanghai Polymer Trading Co., Ltd.",
+    "importador": "Importer Comercial Atlantico Sul Ltda",
+    "volumes_total": "TOTAL PACKAGES 24",
+    "peso_bruto_total_kg": "TOTAL GROSS WEIGHT 7,108.48 kg",
+    "peso_liquido_total_kg": "TOTAL NET WEIGHT 6,643.44 kg",
+    "cubagem_m3": "TOTAL MEASUREMENT 25.52 m3",
+    "conteineres": [
+      "Container Numbers STRU7917190"
+    ],
+    "itens": [
+      {
+        "descricao": "Laptop computers 4648 24 6,643.44 7,108.48",
+        "quantidade": "Laptop computers 4648 24 6,643.44 7,108.48",
+        "volumes": "Laptop computers 4648 24 6,643.44 7,108.48",
+        "peso_liquido_kg": "Laptop computers 4648 24 6,643.44 7,108.48",
+        "peso_bruto_kg": "Laptop computers 4648 24 6,643.44 7,108.48"
+      }
+    ]
+  }
+}

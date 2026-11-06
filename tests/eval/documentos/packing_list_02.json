@@ -1,0 +1,71 @@
+{
+  "arquivo": "packing_list_02.pdf",
+  "tipo": "PACKING_LIST",
+  "layout": "en_tabela",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "PACKING LIST\nPacking List Number PL-2026-5918\nCommercial Invoice Ref. INV-2026-4626\nDate of Issue 2026-01-19\nExporter Shanghai Polymer Trading Co., Ltd.\nImporter Textil Serra Azul Ltda\nContainer Numbers FSCU3966105\nDescription Quantity Packages Net Weight (kg) Gross Weight (kg)\nPolyethylene resin 2268 50 9,950.78 10,249.30\nSteel valves 1482 157 3,644.85 3,754.20\nTOTAL PACKAGES 207\nTOTAL NET WEIGHT 13,595.63 kg\nTOTAL GROSS WEIGHT 14,003.50 kg\nTOTAL MEASUREMENT 24.62 m3",
+  "campos": {
+    "numero_packing_list": "PL-2026-5918",
+    "numero_invoice": "INV-2026-4626",
+    "data_emissao": "2026-01-19",
+    "exportador": "Shanghai Polymer Trading Co., Ltd.",
+    "importador": "Textil Serra Azul Ltda",
+    "volumes_total": 207,
+    "peso_bruto_total_kg": "14003.50",
+    "peso_liquido_total_kg": "13595.63",
+    "cubagem_m3": "24.62",
+    "conteineres": [
+      "FSCU3966105"
+    ],
+    "itens": [
+      {
+        "descricao": "Polyethylene resin",
+        "quantidade": "2268",
+        "volumes": 50,
+        "peso_liquido_kg": "9950.78",
+        "peso_bruto_kg": "10249.30"
+      },
+      {
+        "descricao": "Steel valves",
+        "quantidade": "1482",
+        "volumes": 157,
+        "peso_liquido_kg": "3644.85",
+        "peso_bruto_kg": "3754.20"
+      }
+    ]
+  },
+  "evidencias": {
+    "numero_packing_list": "Packing List Number PL-2026-5918",
+    "numero_invoice": "Commercial Invoice Ref. INV-2026-4626",
+    "data_emissao": "Date of Issue 2026-01-19",
+    "exportador": "Exporter Shanghai Polymer Trading Co., Ltd.",
+    "importador": "Importer Textil Serra Azul Ltda",
+    "volumes_total": "TOTAL PACKAGES 207",
+    "peso_bruto_total_kg": "TOTAL GROSS WEIGHT 14,003.50 kg",
+    "peso_liquido_total_kg": "TOTAL NET WEIGHT 13,595.63 kg",
+    "cubagem_m3": "TOTAL MEASUREMENT 24.62 m3",
+    "conteineres": [
+      "Container Numbers FSCU3966105"
+    ],
+    "itens": [
+      {
+        "descricao": "Polyethylene resin 2268 50 9,950.78 10,249.30",
+        "quantidade": "Polyethylene resin 2268 50 9,950.78 10,249.30",
+        "volumes": "Polyethylene resin 2268 50 9,950.78 10,249.30",
+        "peso_liquido_kg": "Polyethylene resin 2268 50 9,950.78 10,249.30",
+        "peso_bruto_kg": "Polyethylene resin 2268 50 9,950.78 10,249.30"
+      },
+      {
+        "descricao": "Steel valves 1482 157 3,644.85 3,754.20",
+        "quantidade": "Steel valves 1482 157 3,644.85 3,754.20",
+        "volumes": "Steel valves 1482 157 3,644.85 3,754.20",
+        "peso_liquido_kg": "Steel valves 1482 157 3,644.85 3,754.20",
+        "peso_bruto_kg": "Steel valves 1482 157 3,644.85 3,754.20"
+      }
+    ]
+  }
+}

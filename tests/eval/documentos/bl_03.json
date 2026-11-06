@@ -1,0 +1,67 @@
+{
+  "arquivo": "bl_03.pdf",
+  "tipo": "BL",
+  "layout": "pt_chave_valor",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "CONHECIMENTO DE EMBARQUE (BILL OF LADING)\nNúmero do B/L: FSLX5812736034\nEmbarcador: Busan Steel Components Co., Ltd.\nConsignatário: Comercial Atlantico Sul Ltda\nNotificar: o mesmo consignatário\nPorto de embarque: CNSHA - Shanghai\nPorto de descarga: BRSSZ - Santos\nNavio: OCEAN PIONEER\nData de embarque: 27/06/2026\nContêiner AZLU8103967  Lacre SL152333  20GP  239 volumes  20.589,97 kg\nTotal de volumes: 239\nPeso bruto total: 20.589,97 kg\nCubagem: 46,71 m³\nMercadoria: Válvulas de aço\nNCM: 8481.80.95\nFrete: PREPAID",
+  "campos": {
+    "numero_bl": "FSLX5812736034",
+    "embarcador": "Busan Steel Components Co., Ltd.",
+    "consignatario": "Comercial Atlantico Sul Ltda",
+    "notificar": "o mesmo consignatário",
+    "porto_carregamento": "CNSHA",
+    "porto_descarga": "BRSSZ",
+    "navio": "OCEAN PIONEER",
+    "viagem": null,
+    "data_embarque": "2026-06-27",
+    "conteineres": [
+      {
+        "numero": "AZLU8103967",
+        "lacre": "SL152333",
+        "tipo": "20GP",
+        "volumes": 239,
+        "peso_bruto_kg": "20589.97"
+      }
+    ],
+    "volumes_total": 239,
+    "peso_bruto_total_kg": "20589.97",
+    "cubagem_m3": "46.71",
+    "descricao_mercadoria": "Válvulas de aço",
+    "ncm": [
+      "84818095"
+    ],
+    "frete": "PREPAID"
+  },
+  "evidencias": {
+    "numero_bl": "Número do B/L: FSLX5812736034",
+    "embarcador": "Embarcador: Busan Steel Components Co., Ltd.",
+    "consignatario": "Consignatário: Comercial Atlantico Sul Ltda",
+    "notificar": "Notificar: o mesmo consignatário",
+    "porto_carregamento": "Porto de embarque: CNSHA - Shanghai",
+    "porto_descarga": "Porto de descarga: BRSSZ - Santos",
+    "navio": "Navio: OCEAN PIONEER",
+    "viagem": null,
+    "data_embarque": "Data de embarque: 27/06/2026",
+    "conteineres": [
+      {
+        "numero": "Contêiner AZLU8103967  Lacre SL152333  20GP  239 volumes  20.589,97 kg",
+        "lacre": "Contêiner AZLU8103967  Lacre SL152333  20GP  239 volumes  20.589,97 kg",
+        "tipo": "Contêiner AZLU8103967  Lacre SL152333  20GP  239 volumes  20.589,97 kg",
+        "volumes": "Contêiner AZLU8103967  Lacre SL152333  20GP  239 volumes  20.589,97 kg",
+        "peso_bruto_kg": "Contêiner AZLU8103967  Lacre SL152333  20GP  239 volumes  20.589,97 kg"
+      }
+    ],
+    "volumes_total": "Total de volumes: 239",
+    "peso_bruto_total_kg": "Peso bruto total: 20.589,97 kg",
+    "cubagem_m3": "Cubagem: 46,71 m³",
+    "descricao_mercadoria": "Mercadoria: Válvulas de aço",
+    "ncm": [
+      "NCM: 8481.80.95"
+    ],
+    "frete": "Frete: PREPAID"
+  }
+}

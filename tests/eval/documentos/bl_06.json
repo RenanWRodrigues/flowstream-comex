@@ -1,0 +1,69 @@
+{
+  "arquivo": "bl_06.pdf",
+  "tipo": "BL",
+  "layout": "pt_chave_valor",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "CONHECIMENTO DE EMBARQUE (BILL OF LADING)\nNúmero do B/L: FSLX1662180808\nEmbarcador: Milano Tessuti S.r.l.\nConsignatário: Quimica Litoral Norte Ltda\nPorto de embarque: CNNGB - Ningbo\nPorto de descarga: BRSSZ - Santos\nNavio: SEA LANTERN    Viagem: 320W\nData de embarque: 27/03/2026\nContêiner AZLU9628585  Lacre SL996334  20GP  350 volumes  3.928,28 kg\nTotal de volumes: 350\nPeso bruto total: 3.928,28 kg\nCubagem: 42,79 m³\nMercadoria: Tecido de algodão e Instrumentos de medição\nNCM: 5208.12.00, 9031.80.99\nFrete: COLLECT",
+  "campos": {
+    "numero_bl": "FSLX1662180808",
+    "embarcador": "Milano Tessuti S.r.l.",
+    "consignatario": "Quimica Litoral Norte Ltda",
+    "notificar": null,
+    "porto_carregamento": "CNNGB",
+    "porto_descarga": "BRSSZ",
+    "navio": "SEA LANTERN",
+    "viagem": "320W",
+    "data_embarque": "2026-03-27",
+    "conteineres": [
+      {
+        "numero": "AZLU9628585",
+        "lacre": "SL996334",
+        "tipo": "20GP",
+        "volumes": 350,
+        "peso_bruto_kg": "3928.28"
+      }
+    ],
+    "volumes_total": 350,
+    "peso_bruto_total_kg": "3928.28",
+    "cubagem_m3": "42.79",
+    "descricao_mercadoria": "Tecido de algodão e Instrumentos de medição",
+    "ncm": [
+      "52081200",
+      "90318099"
+    ],
+    "frete": "COLLECT"
+  },
+  "evidencias": {
+    "numero_bl": "Número do B/L: FSLX1662180808",
+    "embarcador": "Embarcador: Milano Tessuti S.r.l.",
+    "consignatario": "Consignatário: Quimica Litoral Norte Ltda",
+    "notificar": null,
+    "porto_carregamento": "Porto de embarque: CNNGB - Ningbo",
+    "porto_descarga": "Porto de descarga: BRSSZ - Santos",
+    "navio": "Navio: SEA LANTERN    Viagem: 320W",
+    "viagem": "Navio: SEA LANTERN    Viagem: 320W",
+    "data_embarque": "Data de embarque: 27/03/2026",
+    "conteineres": [
+      {
+        "numero": "Contêiner AZLU9628585  Lacre SL996334  20GP  350 volumes  3.928,28 kg",
+        "lacre": "Contêiner AZLU9628585  Lacre SL996334  20GP  350 volumes  3.928,28 kg",
+        "tipo": "Contêiner AZLU9628585  Lacre SL996334  20GP  350 volumes  3.928,28 kg",
+        "volumes": "Contêiner AZLU9628585  Lacre SL996334  20GP  350 volumes  3.928,28 kg",
+        "peso_bruto_kg": "Contêiner AZLU9628585  Lacre SL996334  20GP  350 volumes  3.928,28 kg"
+      }
+    ],
+    "volumes_total": "Total de volumes: 350",
+    "peso_bruto_total_kg": "Peso bruto total: 3.928,28 kg",
+    "cubagem_m3": "Cubagem: 42,79 m³",
+    "descricao_mercadoria": "Mercadoria: Tecido de algodão e Instrumentos de medição",
+    "ncm": [
+      "NCM: 5208.12.00, 9031.80.99",
+      "NCM: 5208.12.00, 9031.80.99"
+    ],
+    "frete": "Frete: COLLECT"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "arquivo": "invoice_05.pdf",
+  "tipo": "INVOICE",
+  "layout": "en_tabela",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "COMMERCIAL INVOICE\nInvoice Number CI-2026-9758\nInvoice Date 2026-03-20\nSeller Hamburg Industrietechnik GmbH\nBuyer Metalurgica Vale Verde Ltda\nBuyer CNPJ 00.000.789/0001-80\nIncoterms 2020 CFR Paranagua\nCurrency EUR\nDescription NCM Qty Unit Unit Price Amount\nMeasuring instruments 90318099 4720 UN 134.91 636775.20\nLaptop computers 84713012 829 KG 110.77 91828.33\nGears, steel 84834010 2662 KG 89.51 238275.62\nTOTAL AMOUNT EUR 966,879.15\nCountry of Origin Germany",
+  "campos": {
+    "numero_invoice": "CI-2026-9758",
+    "data_emissao": "2026-03-20",
+    "exportador": "Hamburg Industrietechnik GmbH",
+    "importador": "Metalurgica Vale Verde Ltda",
+    "importador_cnpj": "00.000.789/0001-80",
+    "incoterm": "CFR",
+    "moeda": "EUR",
+    "itens": [
+      {
+        "descricao": "Measuring instruments",
+        "ncm": "90318099",
+        "quantidade": "4720",
+        "unidade": "UN",
+        "valor_unitario": "134.91",
+        "valor_total": "636775.20"
+      },
+      {
+        "descricao": "Laptop computers",
+        "ncm": "84713012",
+        "quantidade": "829",
+        "unidade": "KG",
+        "valor_unitario": "110.77",
+        "valor_total": "91828.33"
+      },
+      {
+        "descricao": "Gears, steel",
+        "ncm": "84834010",
+        "quantidade": "2662",
+        "unidade": "KG",
+        "valor_unitario": "89.51",
+        "valor_total": "238275.62"
+      }
+    ],
+    "valor_total": "966879.15",
+    "pais_origem": "Germany",
+    "frete": null,
+    "seguro": null
+  },
+  "evidencias": {
+    "numero_invoice": "Invoice Number CI-2026-9758",
+    "data_emissao": "Invoice Date 2026-03-20",
+    "exportador": "Seller Hamburg Industrietechnik GmbH",
+    "importador": "Buyer Metalurgica Vale Verde Ltda",
+    "importador_cnpj": "Buyer CNPJ 00.000.789/0001-80",
+    "incoterm": "Incoterms 2020 CFR Paranagua",
+    "moeda": "Currency EUR",
+    "itens": [
+      {
+        "descricao": "Measuring instruments 90318099 4720 UN 134.91 636775.20",
+        "ncm": "Measuring instruments 90318099 4720 UN 134.91 636775.20",
+        "quantidade": "Measuring instruments 90318099 4720 UN 134.91 636775.20",
+        "unidade": "Measuring instruments 90318099 4720 UN 134.91 636775.20",
+        "valor_unitario": "Measuring instruments 90318099 4720 UN 134.91 636775.20",
+        "valor_total": "Measuring instruments 90318099 4720 UN 134.91 636775.20"
+      },
+      {
+        "descricao": "Laptop computers 84713012 829 KG 110.77 91828.33",
+        "ncm": "Laptop computers 84713012 829 KG 110.77 91828.33",
+        "quantidade": "Laptop computers 84713012 829 KG 110.77 91828.33",
+        "unidade": "Laptop computers 84713012 829 KG 110.77 91828.33",
+        "valor_unitario": "Laptop computers 84713012 829 KG 110.77 91828.33",
+        "valor_total": "Laptop computers 84713012 829 KG 110.77 91828.33"
+      },
+      {
+        "descricao": "Gears, steel 84834010 2662 KG 89.51 238275.62",
+        "ncm": "Gears, steel 84834010 2662 KG 89.51 238275.62",
+        "quantidade": "Gears, steel 84834010 2662 KG 89.51 238275.62",
+        "unidade": "Gears, steel 84834010 2662 KG 89.51 238275.62",
+        "valor_unitario": "Gears, steel 84834010 2662 KG 89.51 238275.62",
+        "valor_total": "Gears, steel 84834010 2662 KG 89.51 238275.62"
+      }
+    ],
+    "valor_total": "TOTAL AMOUNT EUR 966,879.15",
+    "pais_origem": "Country of Origin Germany",
+    "frete": null,
+    "seguro": null
+  }
+}

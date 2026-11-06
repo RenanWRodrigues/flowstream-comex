@@ -1,0 +1,73 @@
+{
+  "arquivo": "invoice_01.pdf",
+  "tipo": "INVOICE",
+  "layout": "en_chave_valor",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "COMMERCIAL INVOICE\nInvoice No.: INV-2026-8731\nDate: 20/04/2026\nSeller: Hamburg Industrietechnik GmbH\nBuyer: Metalurgica Vale Verde Ltda  CNPJ 00.000.789/0001-80\nIncoterm: FCA Busan\nCurrency: USD\nItem 1  Ceramic tiles  NCM 6907.21.00  653 UN  x  USD 77.48  =  USD 50,594.44\nItem 2  Cotton fabric  NCM 5208.12.00  4,026 KG  x  USD 232.47  =  USD 935,924.22\nTotal: USD 986,518.66\nCountry of origin: Germany",
+  "campos": {
+    "numero_invoice": "INV-2026-8731",
+    "data_emissao": "2026-04-20",
+    "exportador": "Hamburg Industrietechnik GmbH",
+    "importador": "Metalurgica Vale Verde Ltda",
+    "importador_cnpj": "00.000.789/0001-80",
+    "incoterm": "FCA",
+    "moeda": "USD",
+    "itens": [
+      {
+        "descricao": "Ceramic tiles",
+        "ncm": "69072100",
+        "quantidade": "653",
+        "unidade": "UN",
+        "valor_unitario": "77.48",
+        "valor_total": "50594.44"
+      },
+      {
+        "descricao": "Cotton fabric",
+        "ncm": "52081200",
+        "quantidade": "4026",
+        "unidade": "KG",
+        "valor_unitario": "232.47",
+        "valor_total": "935924.22"
+      }
+    ],
+    "valor_total": "986518.66",
+    "pais_origem": "Germany",
+    "frete": null,
+    "seguro": null
+  },
+  "evidencias": {
+    "numero_invoice": "Invoice No.: INV-2026-8731",
+    "data_emissao": "Date: 20/04/2026",
+    "exportador": "Seller: Hamburg Industrietechnik GmbH",
+    "importador": "Buyer: Metalurgica Vale Verde Ltda  CNPJ 00.000.789/0001-80",
+    "importador_cnpj": "Buyer: Metalurgica Vale Verde Ltda  CNPJ 00.000.789/0001-80",
+    "incoterm": "Incoterm: FCA Busan",
+    "moeda": "Currency: USD",
+    "itens": [
+      {
+        "descricao": "Item 1  Ceramic tiles  NCM 6907.21.00  653 UN  x  USD 77.48  =  USD 50,594.44",
+        "ncm": "Item 1  Ceramic tiles  NCM 6907.21.00  653 UN  x  USD 77.48  =  USD 50,594.44",
+        "quantidade": "Item 1  Ceramic tiles  NCM 6907.21.00  653 UN  x  USD 77.48  =  USD 50,594.44",
+        "unidade": "Item 1  Ceramic tiles  NCM 6907.21.00  653 UN  x  USD 77.48  =  USD 50,594.44",
+        "valor_unitario": "Item 1  Ceramic tiles  NCM 6907.21.00  653 UN  x  USD 77.48  =  USD 50,594.44",
+        "valor_total": "Item 1  Ceramic tiles  NCM 6907.21.00  653 UN  x  USD 77.48  =  USD 50,594.44"
+      },
+      {
+        "descricao": "Item 2  Cotton fabric  NCM 5208.12.00  4,026 KG  x  USD 232.47  =  USD 935,924.22",
+        "ncm": "Item 2  Cotton fabric  NCM 5208.12.00  4,026 KG  x  USD 232.47  =  USD 935,924.22",
+        "quantidade": "Item 2  Cotton fabric  NCM 5208.12.00  4,026 KG  x  USD 232.47  =  USD 935,924.22",
+        "unidade": "Item 2  Cotton fabric  NCM 5208.12.00  4,026 KG  x  USD 232.47  =  USD 935,924.22",
+        "valor_unitario": "Item 2  Cotton fabric  NCM 5208.12.00  4,026 KG  x  USD 232.47  =  USD 935,924.22",
+        "valor_total": "Item 2  Cotton fabric  NCM 5208.12.00  4,026 KG  x  USD 232.47  =  USD 935,924.22"
+      }
+    ],
+    "valor_total": "Total: USD 986,518.66",
+    "pais_origem": "Country of origin: Germany",
+    "frete": null,
+    "seguro": null
+  }
+}

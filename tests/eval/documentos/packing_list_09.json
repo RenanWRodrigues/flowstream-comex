@@ -1,0 +1,59 @@
+{
+  "arquivo": "packing_list_09.pdf",
+  "tipo": "PACKING_LIST",
+  "layout": "pt_chave_valor",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": true,
+  "decisao_esperada": "REVISAO",
+  "texto": "ROMANEIO DE CARGA (PACKING LIST)\nNúmero do romaneio: PL-2026-4023\nFatura de referência: CI-2026-9471\nData de emissão: 28/07/2026\nExportador: Busan Steel Components Co., Ltd.\nImportador: Metalurgica Vale Verde Ltda\nContêineres: FSCU9747423, AZLU4064395\nItem 1  Resina de polietileno  qtd 818  27 volumes  líquido 6.281,33 kg  bruto 6.532,58 kg\nTotal de volumes: 27\nPeso líquido total: 6.281,33 kg\nPeso bruto total: 6.532,58 kg\nCubagem total: 51,64 m³",
+  "campos": {
+    "numero_packing_list": "PL-2026-4023",
+    "numero_invoice": "CI-2026-9471",
+    "data_emissao": "2026-07-28",
+    "exportador": "Busan Steel Components Co., Ltd.",
+    "importador": "Metalurgica Vale Verde Ltda",
+    "volumes_total": 27,
+    "peso_bruto_total_kg": "6532.58",
+    "peso_liquido_total_kg": "6281.33",
+    "cubagem_m3": "51.64",
+    "conteineres": [
+      "FSCU9747423",
+      "AZLU4064395"
+    ],
+    "itens": [
+      {
+        "descricao": "Resina de polietileno",
+        "quantidade": "818",
+        "volumes": 27,
+        "peso_liquido_kg": "6281.33",
+        "peso_bruto_kg": "6532.58"
+      }
+    ]
+  },
+  "evidencias": {
+    "numero_packing_list": "Número do romaneio: PL-2026-4023",
+    "numero_invoice": "Fatura de referência: CI-2026-9471",
+    "data_emissao": "Data de emissão: 28/07/2026",
+    "exportador": "Exportador: Busan Steel Components Co., Ltd.",
+    "importador": "Importador: Metalurgica Vale Verde Ltda",
+    "volumes_total": "Total de volumes: 27",
+    "peso_bruto_total_kg": "Peso bruto total: 6.532,58 kg",
+    "peso_liquido_total_kg": "Peso líquido total: 6.281,33 kg",
+    "cubagem_m3": "Cubagem total: 51,64 m³",
+    "conteineres": [
+      "Contêineres: FSCU9747423, AZLU4064395",
+      "Contêineres: FSCU9747423, AZLU4064395"
+    ],
+    "itens": [
+      {
+        "descricao": "Item 1  Resina de polietileno  qtd 818  27 volumes  líquido 6.281,33 kg  bruto 6.532,58 kg",
+        "quantidade": "Item 1  Resina de polietileno  qtd 818  27 volumes  líquido 6.281,33 kg  bruto 6.532,58 kg",
+        "volumes": "Item 1  Resina de polietileno  qtd 818  27 volumes  líquido 6.281,33 kg  bruto 6.532,58 kg",
+        "peso_liquido_kg": "Item 1  Resina de polietileno  qtd 818  27 volumes  líquido 6.281,33 kg  bruto 6.532,58 kg",
+        "peso_bruto_kg": "Item 1  Resina de polietileno  qtd 818  27 volumes  líquido 6.281,33 kg  bruto 6.532,58 kg"
+      }
+    ]
+  }
+}

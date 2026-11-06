@@ -1,0 +1,81 @@
+{
+  "arquivo": "packing_list_01.pdf",
+  "tipo": "PACKING_LIST",
+  "layout": "en_chave_valor",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "PACKING LIST\nPacking List No.: PL-2026-6375\nInvoice No.: INV-2026-3018\nDate: 24/09/2026\nExporter: Hamburg Industrietechnik GmbH\nImporter: Textil Serra Azul Ltda\nItem 1  Ceramic tiles  qty 3,527  162 packages  net 11,372.08 kg  gross 12,168.13 kg\nItem 2  Polyethylene resin  qty 1,457  62 packages  net 8,258.09 kg  gross 8,505.83 kg\nItem 3  Ball bearings  qty 3,792  84 packages  net 2,107.99 kg  gross 2,234.47 kg\nTotal packages: 308\nTotal net weight: 21,738.16 kg\nTotal gross weight: 22,908.43 kg\nTotal measurement: 40.63 m3",
+  "campos": {
+    "numero_packing_list": "PL-2026-6375",
+    "numero_invoice": "INV-2026-3018",
+    "data_emissao": "2026-09-24",
+    "exportador": "Hamburg Industrietechnik GmbH",
+    "importador": "Textil Serra Azul Ltda",
+    "volumes_total": 308,
+    "peso_bruto_total_kg": "22908.43",
+    "peso_liquido_total_kg": "21738.16",
+    "cubagem_m3": "40.63",
+    "conteineres": [],
+    "itens": [
+      {
+        "descricao": "Ceramic tiles",
+        "quantidade": "3527",
+        "volumes": 162,
+        "peso_liquido_kg": "11372.08",
+        "peso_bruto_kg": "12168.13"
+      },
+      {
+        "descricao": "Polyethylene resin",
+        "quantidade": "1457",
+        "volumes": 62,
+        "peso_liquido_kg": "8258.09",
+        "peso_bruto_kg": "8505.83"
+      },
+      {
+        "descricao": "Ball bearings",
+        "quantidade": "3792",
+        "volumes": 84,
+        "peso_liquido_kg": "2107.99",
+        "peso_bruto_kg": "2234.47"
+      }
+    ]
+  },
+  "evidencias": {
+    "numero_packing_list": "Packing List No.: PL-2026-6375",
+    "numero_invoice": "Invoice No.: INV-2026-3018",
+    "data_emissao": "Date: 24/09/2026",
+    "exportador": "Exporter: Hamburg Industrietechnik GmbH",
+    "importador": "Importer: Textil Serra Azul Ltda",
+    "volumes_total": "Total packages: 308",
+    "peso_bruto_total_kg": "Total gross weight: 22,908.43 kg",
+    "peso_liquido_total_kg": "Total net weight: 21,738.16 kg",
+    "cubagem_m3": "Total measurement: 40.63 m3",
+    "conteineres": [],
+    "itens": [
+      {
+        "descricao": "Item 1  Ceramic tiles  qty 3,527  162 packages  net 11,372.08 kg  gross 12,168.13 kg",
+        "quantidade": "Item 1  Ceramic tiles  qty 3,527  162 packages  net 11,372.08 kg  gross 12,168.13 kg",
+        "volumes": "Item 1  Ceramic tiles  qty 3,527  162 packages  net 11,372.08 kg  gross 12,168.13 kg",
+        "peso_liquido_kg": "Item 1  Ceramic tiles  qty 3,527  162 packages  net 11,372.08 kg  gross 12,168.13 kg",
+        "peso_bruto_kg": "Item 1  Ceramic tiles  qty 3,527  162 packages  net 11,372.08 kg  gross 12,168.13 kg"
+      },
+      {
+        "descricao": "Item 2  Polyethylene resin  qty 1,457  62 packages  net 8,258.09 kg  gross 8,505.83 kg",
+        "quantidade": "Item 2  Polyethylene resin  qty 1,457  62 packages  net 8,258.09 kg  gross 8,505.83 kg",
+        "volumes": "Item 2  Polyethylene resin  qty 1,457  62 packages  net 8,258.09 kg  gross 8,505.83 kg",
+        "peso_liquido_kg": "Item 2  Polyethylene resin  qty 1,457  62 packages  net 8,258.09 kg  gross 8,505.83 kg",
+        "peso_bruto_kg": "Item 2  Polyethylene resin  qty 1,457  62 packages  net 8,258.09 kg  gross 8,505.83 kg"
+      },
+      {
+        "descricao": "Item 3  Ball bearings  qty 3,792  84 packages  net 2,107.99 kg  gross 2,234.47 kg",
+        "quantidade": "Item 3  Ball bearings  qty 3,792  84 packages  net 2,107.99 kg  gross 2,234.47 kg",
+        "volumes": "Item 3  Ball bearings  qty 3,792  84 packages  net 2,107.99 kg  gross 2,234.47 kg",
+        "peso_liquido_kg": "Item 3  Ball bearings  qty 3,792  84 packages  net 2,107.99 kg  gross 2,234.47 kg",
+        "peso_bruto_kg": "Item 3  Ball bearings  qty 3,792  84 packages  net 2,107.99 kg  gross 2,234.47 kg"
+      }
+    ]
+  }
+}

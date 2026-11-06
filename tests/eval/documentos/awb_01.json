@@ -1,0 +1,37 @@
+{
+  "arquivo": "awb_01.pdf",
+  "tipo": "AWB",
+  "layout": "en_chave_valor",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "AIR WAYBILL\nAWB No.: 047-44903644\nShipper: Milano Tessuti S.r.l.\nConsignee: Metalurgica Vale Verde Ltda\nAirport of Departure: LIS\nAirport of Destination: VCP\nNo. of pieces: 38\nGross weight: 365.65 kg\nChargeable weight: 457.06 kg\nNature of goods: Ceramic tiles",
+  "campos": {
+    "numero_awb": "047-44903644",
+    "embarcador": "Milano Tessuti S.r.l.",
+    "consignatario": "Metalurgica Vale Verde Ltda",
+    "aeroporto_origem": "LIS",
+    "aeroporto_destino": "VCP",
+    "voo": null,
+    "data_voo": null,
+    "volumes": 38,
+    "peso_bruto_kg": "365.65",
+    "peso_taxavel_kg": "457.06",
+    "descricao_mercadoria": "Ceramic tiles"
+  },
+  "evidencias": {
+    "numero_awb": "AWB No.: 047-44903644",
+    "embarcador": "Shipper: Milano Tessuti S.r.l.",
+    "consignatario": "Consignee: Metalurgica Vale Verde Ltda",
+    "aeroporto_origem": "Airport of Departure: LIS",
+    "aeroporto_destino": "Airport of Destination: VCP",
+    "voo": null,
+    "data_voo": null,
+    "volumes": "No. of pieces: 38",
+    "peso_bruto_kg": "Gross weight: 365.65 kg",
+    "peso_taxavel_kg": "Chargeable weight: 457.06 kg",
+    "descricao_mercadoria": "Nature of goods: Ceramic tiles"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "dbt_schema_version": "https://schemas.getdbt.com/dbt/sources/v3.json",
+    "dbt_version": "1.12.6",
+    "generated_at": "2026-11-03T13:53:03.010302Z"
+  },
+  "results": [
+    {
+      "unique_id": "source.flowstream.bronze.ptax",
+      "max_loaded_at": "2026-11-03T11:28:38.562731+00:00",
+      "snapshotted_at": "2026-11-03T13:53:02.521270+00:00",
+      "max_loaded_at_time_ago_in_s": 388800.0,
+      "status": "warn",
+      "criteria": {
+        "warn_after": {
+          "count": 4,
+          "period": "day"
+        },
+        "error_after": {
+          "count": 7,
+          "period": "day"
+        },
+        "filter": null
+      },
+      "thread_id": "Thread-2 (worker)",
+      "execution_time": 0.21686053276062012
+    },
+    {
+      "unique_id": "source.flowstream.bronze.comexstat",
+      "max_loaded_at": "2026-11-03T11:45:35.056547+00:00",
+      "snapshotted_at": "2026-11-03T13:53:02.562926+00:00",
+      "max_loaded_at_time_ago_in_s": 6048000,
+      "status": "error",
+      "criteria": {
+        "warn_after": {
+          "count": 35,
+          "period": "day"
+        },
+        "error_after": {
+          "count": 65,
+          "period": "day"
+        },
+        "filter": null
+      },
+      "thread_id": "Thread-1 (worker)",
+      "execution_time": 0.41472578048706055
+    }
+  ],
+  "elapsed_time": 1.2942943572998047
+}

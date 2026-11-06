@@ -1,0 +1,37 @@
+{
+  "arquivo": "awb_06.pdf",
+  "tipo": "AWB",
+  "layout": "pt_chave_valor",
+  "escaneado": false,
+  "erro_proposital": null,
+  "regra_esperada": null,
+  "injecao": false,
+  "decisao_esperada": "APROVADO",
+  "texto": "CONHECIMENTO AÉREO (AIR WAYBILL)\nNúmero do AWB: 047-32266721\nEmbarcador: Houston Valve Supply LLC\nConsignatário: Textil Serra Azul Ltda\nAeroporto de origem: LIS\nAeroporto de destino: NVT\nVoo: TP 5301 em 26/07/2026\nVolumes: 58\nPeso bruto: 29,28 kg\nPeso taxável: 36,60 kg\nMercadoria: Tecido de algodão",
+  "campos": {
+    "numero_awb": "047-32266721",
+    "embarcador": "Houston Valve Supply LLC",
+    "consignatario": "Textil Serra Azul Ltda",
+    "aeroporto_origem": "LIS",
+    "aeroporto_destino": "NVT",
+    "voo": "TP 5301",
+    "data_voo": "2026-07-26",
+    "volumes": 58,
+    "peso_bruto_kg": "29.28",
+    "peso_taxavel_kg": "36.60",
+    "descricao_mercadoria": "Tecido de algodão"
+  },
+  "evidencias": {
+    "numero_awb": "Número do AWB: 047-32266721",
+    "embarcador": "Embarcador: Houston Valve Supply LLC",
+    "consignatario": "Consignatário: Textil Serra Azul Ltda",
+    "aeroporto_origem": "Aeroporto de origem: LIS",
+    "aeroporto_destino": "Aeroporto de destino: NVT",
+    "voo": "Voo: TP 5301 em 26/07/2026",
+    "data_voo": "Voo: TP 5301 em 26/07/2026",
+    "volumes": "Volumes: 58",
+    "peso_bruto_kg": "Peso bruto: 29,28 kg",
+    "peso_taxavel_kg": "Peso taxável: 36,60 kg",
+    "descricao_mercadoria": "Mercadoria: Tecido de algodão"
+  }
+}
